@@ -9,7 +9,7 @@ Quick install :
 
   Des précisions quant à l'installation de la dernière version de docker seront ajoutées par la suite.
 
-L'environement en place, on peut lancer une simulation :
+L'environnement en place, on peut lancer une simulation :
 ```
 sudo oardocker start -n <nb> # <nb> nb nodes
 ```
