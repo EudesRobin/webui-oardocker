@@ -1,6 +1,6 @@
 Projet RICM4 - EUDES Robin & ROSSI Ombeline
 
-Voir le wiki ur Github pour plus de détails.
+Voir le wiki sur Github pour plus de détails.
 
 Quick install :
   * Prérequis : 
