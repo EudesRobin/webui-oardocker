@@ -1,28 +1,18 @@
 Projet RICM4 - EUDES Robin & ROSSI Ombeline
 
-Webui oar-docker
+Voir le wiki ur Github pour plus de détails.
 
-Pour lancer le projet :
+Quick install :
+  * Prérequis : 
+  -> suivre les commandes pour initier l'environnement oar-docker, disponibles à cette adresse :
+    https://github.com/oar-team/oar-docker
 
-suivre les commandes pour initier l'environnement oar-docker, disponibles à cette adresse :
-https://github.com/oar-team/oar-docker
+  L'environement en place, on peut lancer une simulation :
 
-L'environement en place, on peut lancer une architecture minimale ( un seul node en plus du frontend / DB ) 
+$ sudo oardocker start -n <nb> # <nb> nb nodes
 
-$ sudo oardocker start -n 1 # nombre de noeuds
+Pour installer la webui, lancer la commande suivante dans le même répertoire que la commande précédante ( sinon l'environment initialisé n'est pas trouvé par oardocker ).
 
-$ sudo oardocker connect frontend
-
-Une fois connecté au frontend :
-
-$ cd /var/www/
-
-$ sudo git clone https://github.com/EudesRobin/webui-oardocker.git
-
-$ cd webui-oardocker
-
-$ sudo chmod +x init.sh
-
-$ sudo ./init.sh
+$ sudo oardocker exec frontend "wget https://raw.githubusercontent.com/EudesRobin/webui-oardocker/master/init.sh && chmod +x init.sh && sudo ./init.sh"
 
 Votre webui est accessible à l'adresse : http://localhost:48080/webui-ordocker/
