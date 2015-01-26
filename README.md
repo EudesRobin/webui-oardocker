@@ -14,7 +14,9 @@ $ sudo oardocker connect frontend
 
 Une fois connecté au frontend :
 
-$ cd /var/www/webui-oardocker
+$ cd /var/www/
+$ sudo git clone https://github.com/EudesRobin/webui-oardocker.git
+$ cd webui-oardocker
 $ sudo chmod +x init.sh
 $ sudo ./init.sh
 
