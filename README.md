@@ -4,15 +4,18 @@ Webui oar-docker
 
 Pour lancer le projet :
 
-suivre les commandes pour initier l'environnement oar-docker ( dans votre home, par exemple ).
+suivre les commandes pour initier l'environnement oar-docker, disponibles à cette adresse :
+https://github.com/oar-team/oar-docker
 
-ensuite :
+L'environement en place, on peut lancer une architecture minimale ( un seul node en plus du frontend / DB ) 
 
-sudo oardocker start -n 1 # nombre de noeuds
-sudo oardocker connect frontend
+$ sudo oardocker start -n 1 # nombre de noeuds
+$ sudo oardocker connect frontend
 
 Une fois connecté au frontend :
 
-se placer dans /var/www
-rendre le script executable ( sudo chmod +x script.sh )
-executer le script ( sudo ./script.sh)
+$ cd /var/www/webui-oardocker
+$ sudo chmod +x init.sh
+$ sudo ./init.sh
+
+Votre webui est accessible à l'adresse : http://localhost:48080/webui-ordocker/
