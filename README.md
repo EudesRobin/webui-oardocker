@@ -10,14 +10,19 @@ https://github.com/oar-team/oar-docker
 L'environement en place, on peut lancer une architecture minimale ( un seul node en plus du frontend / DB ) 
 
 $ sudo oardocker start -n 1 # nombre de noeuds
+
 $ sudo oardocker connect frontend
 
 Une fois connecté au frontend :
 
 $ cd /var/www/
+
 $ sudo git clone https://github.com/EudesRobin/webui-oardocker.git
+
 $ cd webui-oardocker
+
 $ sudo chmod +x init.sh
+
 $ sudo ./init.sh
 
 Votre webui est accessible à l'adresse : http://localhost:48080/webui-ordocker/
