@@ -19,4 +19,4 @@ Pour installer la webui, lancer la commande suivante dans le même répertoire q
 sudo oardocker exec frontend "wget https://raw.githubusercontent.com/EudesRobin/webui-oardocker/master/init.sh && chmod +x init.sh && sudo ./init.sh"
 ```
 
-Votre webui est accessible à l'adresse : [http://localhost:48080/webui-ordocker](http://localhost:48080/webui-ordocker)
+Votre webui est accessible à l'adresse : [http://localhost:48080/webui-oardocker/](http://localhost:48080/webui-oardocker/)
