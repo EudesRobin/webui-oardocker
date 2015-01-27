@@ -19,3 +19,6 @@ sudo npm install -g grunt-cli;
 cd node_modules/bootstrap/;
 sudo npm install;
 sudo grunt dist;
+
+cd /var/www;
+sudo git clone https://github.com/EudesRobin/webui-oardocker.git;
