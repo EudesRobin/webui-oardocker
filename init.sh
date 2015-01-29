@@ -3,10 +3,10 @@
 # requirements
 sudo apt-get install git-core;
 
-# Install of node.js
+# Install of precompiled 64bits binaries of node.js
 wget http://nodejs.org/dist/v0.10.36/node-v0.10.36-linux-x64.tar.gz;
-sudo tar -xzvf ./node-v0.10.36-linux-x64.tar.gz;
-rm ./node-v0.10.36-linux-x64.tar.gz;
+cd /usr/local && sudo tar --strip-components 1 -xzf /home/docker/node-v0.10.36-linux-x64.tar.gz;
+rm /home/docker/node-v0.10.36-linux-x64.tar.gz;
 
 # Install of Boostrap
 cd /var/www;
