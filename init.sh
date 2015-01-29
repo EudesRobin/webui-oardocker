@@ -1,18 +1,14 @@
 #!/bin/bash
 
-# prerequis
-sudo apt-get install python g++ make git-core;
+# requirements
+sudo apt-get install git-core;
 
-# node.js & npm
-sudo apt-get install python g++ make git-core;
-cd /usr/local/src
-wget http://nodejs.org/dist/node-latest.tar.gz
-tar zxvf node-latest.tar.gz
-cd node-v0.1*
-./configure
-make
-sudo make install
+# Install of node.js
+wget http://nodejs.org/dist/v0.10.36/node-v0.10.36-linux-x64.tar.gz;
+sudo tar -xzvf ./node-v0.10.36-linux-x64.tar.gz;
+rm ./node-v0.10.36-linux-x64.tar.gz;
 
+# Install of Boostrap
 cd /var/www;
 sudo npm install bootstrap;
 sudo npm install -g grunt-cli;
@@ -20,5 +16,6 @@ cd node_modules/bootstrap/;
 sudo npm install;
 sudo grunt dist;
 
+# Now that everything is installed, we clone the "www" directory from our git repository
 cd /var/www;
 sudo git clone https://github.com/EudesRobin/webui-oardocker.git;
