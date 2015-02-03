@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # requirements
-sudo apt-get install git-core;
+sudo apt-get install git-core php5-curl;
 
 # Install of precompiled 64bits binaries of node.js
 wget http://nodejs.org/dist/v0.10.36/node-v0.10.36-linux-x64.tar.gz;
