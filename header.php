@@ -1,6 +1,8 @@
 <?php
+function gen_header($title)
+{
 echo '<!DOCTYPE html>
-<html lang="fr">
+ <html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +11,7 @@ echo '<!DOCTYPE html>
     <meta name="author" content="">
     <link rel="icon" href="./favicon.ico">
 
-    <title>Index - Init Bootstrap</title>
+    <title>'.$title.'</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,4 +24,5 @@ echo '<!DOCTYPE html>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>';
+}
 ?>
