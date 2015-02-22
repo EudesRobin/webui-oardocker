@@ -7,7 +7,7 @@ gen_header("General view");
 // Navbar
 include 'nav.php';
 
-json_request("http://localhost/oarapi/resources.json");
+$json_array  = json_request("http://localhost/oarapi/resources.json");
 
 
 echo '<div class="container theme-showcase" role ="main">
