@@ -9,7 +9,7 @@ if($_GET['id']==0)
 }
 	$json_array  = json_request($url);
 
-	echo '<div id="content_center" class="container theme-showcase" role ="main">
+	echo '<div class="container theme-showcase" role ="main">
 	<div class="jumbotron">
 	<h1>Ensemble des ressources</h1>
 	<p> EN cours de complétion</p>
