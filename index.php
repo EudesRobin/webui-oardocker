@@ -4,9 +4,6 @@
 include 'header.php';
 gen_header("General view");
 
-// Navbar
-include 'nav.php';
-
 $json_array  = json_request("http://localhost/oarapi/resources.json");
 
 
