@@ -1,7 +1,7 @@
 <?php
 include 'json_request.php';
 
-if(!strpos($_GET['id'],'all'))
+if($_GET['id']==0)
 {
 	echo '<div class="container theme-showcase" role ="main">
 	<div class="jumbotron">
