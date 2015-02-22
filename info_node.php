@@ -1,11 +1,27 @@
 <?php
 include 'json_request.php';
+<script>
+	function getnode(id){
+		$.ajax({
+			type:"GET",
+			url='./info_node.php',
+			data:"id="+id,
+			success: function(data){
+				$('content_center').html(data);
+			}
+		})
+	}
+</script>
 
 if($_GET['id']==0)
 {
-	$json_array  = json_request("http://localhost/oarapi/resources.json");
+	$url = 'http://localhost/oarapi/resources.json';
+}else{
+	$url = 'http://localhost/oarapi/resources/nodes/node'.$_GET['id'].'.json';
+}
+	$json_array  = json_request($url);
 
-	echo '<div class="container theme-showcase" role ="main">
+	echo '<div id="content_center" class="container theme-showcase" role ="main">
 	<div class="jumbotron">
 	<h1>Ensemble des ressources</h1>
 	<p> EN cours de complétion</p>
@@ -35,7 +51,7 @@ if($_GET['id']==0)
 			    echo '<tr><td>'.$value['id'].'</td>'.'<td>'.$value['network_address'].'</td>';
 			    if(!strpos($value['state'],'Alive')){
 				$alive++;
-				echo '<td><button type="button" class="btn btn-lg btn-success">'.$value['state'].'</button></td></tr>';
+				echo '<td><button type="button" class="btn btn-lg btn-success" onclick="getnode('.$value['id'].')">'.$value['state'].'</button></td></tr>';
 			   }else if(!strpos($value['state'],'Absent')){
 				$absent++;
 				echo '<td><button type="button" class="btn btn-lg btn-warning">'.$value['state'].'</button></td></tr>';
