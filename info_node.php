@@ -58,8 +58,4 @@ if($_GET['id']==0)
 	        <div class="progress-bar progress-bar-warning" style="width: '.($absent/$taille*100).'%"><span class="sr-only">Complete (warning)</span></div>
 	        <div class="progress-bar progress-bar-danger" style="width: '.($dead/$taille*100).'%"><span class="sr-only">Complete (danger)</span></div>
 		</div></div></div>';
-}else{
-	echo '<p> ERROR PARAM UNKWON<p>';
-}
-
 ?>
