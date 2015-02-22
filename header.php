@@ -47,6 +47,4 @@ echo
       </div>
     </nav>';
 }
-
-include 'json_request.php';
 ?>
