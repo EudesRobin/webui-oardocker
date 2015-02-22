@@ -3,6 +3,8 @@ include 'json_request.php';
 
 if($_GET['id']==0)
 {
+	$json_array  = json_request("http://localhost/oarapi/resources.json");
+
 	echo '<div class="container theme-showcase" role ="main">
 	<div class="jumbotron">
 	<h1>Ensemble des ressources</h1>
