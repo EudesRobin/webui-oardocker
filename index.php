@@ -1,30 +1,13 @@
 <?php
+
+// Header
 include 'header.php';
 gen_header("General view");
 
+// Navbar
 include 'nav.php';
 
-
-$url="http://localhost/oarapi/resources.json";
-//  Initiate curl
-
-$ch = curl_init();
-
-// Disable SSL verification // useless here ( no https )
-//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-
-// Will return the response, if false it print the response
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-// Set the url
-curl_setopt($ch, CURLOPT_URL,$url);
-// Execute
-$result=curl_exec($ch);
-// Closing
-curl_close($ch);
-
-// Save json in an array :)
-$json_array = json_decode($result,true);
-
+json_request("http://localhost/oarapi/resources.json");
 
 
 echo '<div class="container theme-showcase" role ="main">
@@ -76,7 +59,7 @@ echo '      <div class="row">
         <div class="progress-bar progress-bar-warning" style="width: '.($absent/$taille*100).'%"><span class="sr-only">Complete (warning)</span></div>
         <div class="progress-bar progress-bar-danger" style="width: '.($dead/$taille*100).'%"><span class="sr-only">Complete (danger)</span></div>
 	</div></div></div>';
-	echo '</body></html>';
 
 
+include 'footer.php';
 ?>

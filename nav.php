@@ -1,5 +1,6 @@
 <?php
-echo    '<!-- Fixed navbar -->
+echo 
+'<!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -12,7 +13,7 @@ echo    '<!-- Fixed navbar -->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="lab.php">Home</a></li>
+            <li><a href="index.php">Vue générale</a></li>
             <li><a href="../monika/">Monika</a></li>
             <li><a href="../drawgantt-svg/">Graphe Gant</a></li>
           </ul>
