@@ -18,4 +18,4 @@ sudo oardocker exec frontend "wget https://raw.githubusercontent.com/EudesRobin/
 ```
 The webui is now available at : [http://localhost:48080/webui-oardocker/](http://localhost:48080/webui-oardocker/)
 
-Soon, the installation of the webui will be merge with the build process.
+Soon, the installation of the webui will be merged with the build process.
