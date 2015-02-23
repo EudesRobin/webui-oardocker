@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/EudesRobin/webui-oardocker.png?label=ready&title=Ready)](https://waffle.io/EudesRobin/webui-oardocker)
 __Projet RICM4 - EUDES Robin & ROSSI Ombeline__
 
 
