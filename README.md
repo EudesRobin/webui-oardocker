@@ -41,5 +41,5 @@ The webui is now available at : [http://localhost:48080/webui-oardocker/](http:/
 __Security__
 
 Like oar-docker, this webui for oar-docker is in now way secure.It's a project for development and testing.
-The apache user and password are "docker" . [http://localhost:48080/webui-oardocker/](http://localhost:48080/webui-oardocker/)
+The apache user is "oar" and the password is "docker" . [http://localhost:48080/webui-oardocker/](http://localhost:48080/webui-oardocker/)
 is bind to localhost (by apache ), and should not be used by external stations.
