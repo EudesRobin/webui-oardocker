@@ -7,19 +7,26 @@ if($_GET['id']==0)
 {
 	gen_header("General view");
 	$url = 'http://localhost/oarapi/resources.json';
-}else{
-		gen_header('Details of the node'.$_GET['id']);
-		$url = 'http://localhost/oarapi/resources/nodes/node'.$_GET['id'].'.json';
-}
-	$json_array  = json_request($url);
 
 	echo '<div class="container theme-showcase" role ="main">
 	<div class="jumbotron">
-	<h1>Ensemble des ressources</h1>
-	<p> EN cours de complétion</p>
+	<h1>General view of the nodes</h1>
 	</div>
 	<div class="page-header">
-	        <h1>Resumé</h1></div>';
+	    <h1>State of each cores </h1></div>';
+
+}else{
+		gen_header('Details of the node'.$_GET['id']);
+		$url = 'http://localhost/oarapi/resources/nodes/node'.$_GET['id'].'.json';
+
+		echo '<div class="container theme-showcase" role ="main">
+		<div class="jumbotron">
+		<h1>Details of the node'.$_GET['id'].'</h1>
+		</div>
+		<div class="page-header">
+	    	<h1>State of each cores </h1></div>';
+}
+	$json_array  = json_request($url);
 
 	echo '      <div class="row">
 	        <div class="col-md-6">
