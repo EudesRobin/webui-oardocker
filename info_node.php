@@ -70,7 +70,7 @@ if($_GET['id']==0)
 	          </table>
 	        </div></div>';
 	     // Barre de  "vie" des nodes...
-	      echo '<div class="page-header"><h1>ETAT COURANT</h1></div><div class="progress">
+	      echo '<div class="page-header"><h1>Current state</h1></div><div class="progress">
 	        <div class="progress-bar progress-bar-success" style="width: '.($alive/$taille*100).'%"><span class="sr-only">Complete (success)</span></div>
 	        <div class="progress-bar progress-bar-warning" style="width: '.($absent/$taille*100).'%"><span class="sr-only">Complete (warning)</span></div>
 	        <div class="progress-bar progress-bar-danger" style="width: '.($dead/$taille*100).'%"><span class="sr-only">Complete (danger)</span></div>
