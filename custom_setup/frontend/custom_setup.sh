@@ -4,7 +4,6 @@ set -e
 
 echo "Git & curl setup"
 apt-get -y install git-core php5-curl
-service apache2 restart
 
 echo " Node.js setup"
 wget -O /tmp/node-v0.12.0-linux-x64.tar.gz http://nodejs.org/dist/v0.12.0/node-v0.12.0-linux-x64.tar.gz
