@@ -39,13 +39,13 @@ if($_GET['id']==0)
 			    echo '<tr><td>'.$value['id'].'</td>'.'<td>'.$value['network_address'].'</td>';
 			    if(!strpos($value['state'],'Alive')){
 				$alive++;
-				echo '<td><button type="button" class="btn btn-lg btn-success">'.$value['state'].'</button></td></tr>';
+				echo '<td><input type="button" class="btn btn-lg btn-success" onclick="info_node?id="'.$value['state'].'">'.$value['state'].'</button></td></tr>';
 			   }else if(!strpos($value['state'],'Absent')){
 				$absent++;
-				echo '<td><button type="button" class="btn btn-lg btn-warning">'.$value['state'].'</button></td></tr>';
+				echo '<td><input type="button" class="btn btn-lg btn-warning">'.$value['state'].'</button></td></tr>';
 			  }else{
 				$dead++;
-				echo '<td><button type="button" class="btn btn-lg btn-danger">'.$value['state'].'</button></td></tr>';
+				echo '<td><input type="button" class="btn btn-lg btn-danger">'.$value['state'].'</button></td></tr>';
 			  }
 			}
 	              echo '
