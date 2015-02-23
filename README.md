@@ -1,7 +1,7 @@
 Projet RICM4 - EUDES Robin & ROSSI Ombeline
 
 Quick install :
-  * Requiements :
+  * Requirements :
   Follow the instructions given on [oar-docker github](https://github.com/oar-team/oar-docker) to init the environment
 
   Be careful about docker, iy you are using Ubuntu 14.04, the package name is docker.io ( and notre juste only docker !).
