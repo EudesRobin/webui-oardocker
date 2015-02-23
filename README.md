@@ -36,6 +36,7 @@ sudo oardocker start -n <nb> 2 <nb> # start a simulation with 2 nodes.
 The webui is now available at : [http://localhost:48080/webui-oardocker/](http://localhost:48080/webui-oardocker/)
 
 __Security__
-Like oar-docker, *this webui for oar-docker is in now way secure*.It's a project for development and testing.
+
+Like oar-docker, this webui for oar-docker is in now way secure.It's a project for development and testing.
 The apache user and password are "docker" . [http://localhost:48080/webui-oardocker/](http://localhost:48080/webui-oardocker/)
-is bind to localhost (by apache ), and *should not be used by external stations*.
+is bind to localhost (by apache ), and should not be used by external stations.
