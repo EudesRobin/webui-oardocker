@@ -9,7 +9,7 @@ if($_GET['id']==0)
 	$url = 'http://localhost/oarapi/resources.json';
 }else{
 	
-	if(($_GET['id']%2i)!=0){
+	if(($_GET['id']%2)!=0){
 		gen_header('Details of the node'.($_GET['id']-1));
 		$url = 'http://localhost/oarapi/resources/nodes/node'.($_GET['id']-1).'.json';
 	}else{
