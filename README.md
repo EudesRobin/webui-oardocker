@@ -1,22 +1,21 @@
 Projet RICM4 - EUDES Robin & ROSSI Ombeline
 
-Voir le wiki sur Github pour plus de détails.
-
 Quick install :
-  * Prérequis : 
-  Suivre les commandes pour initier l'environnement oar-docker, disponibles à cette adresse :
-    https://github.com/oar-team/oar-docker
+  * Requiements :
+  Follow the instructions given on [oar-docker github](https://github.com/oar-team/oar-docker) to init the environment
 
-  Des précisions quant à l'installation de la dernière version de docker seront ajoutées par la suite.
+  Be careful about docker, iy you are using Ubuntu 14.04, the package name is docker.io ( and notre juste only docker !).
+  A detail procedure to install the latest docker version is available on the wiki.
 
-L'environnement en place, on peut lancer une simulation :
+Once the environment is setup, we can start a simulation.
 ```
-sudo oardocker start -n <nb> # <nb> nb nodes
+sudo oardocker start -n <nb> 2 <nb> # start a simulation with 2 nodes.
 ```
-Pour installer la webui, lancer la commande suivante dans le même répertoire que la commande précédante ( sinon l'environment initialisé n'est pas trouvé par oardocker ).
+To setup the webui, you must execute the following command on the same directory as the oar-docker environment.
 
 ```
-sudo oardocker exec frontend "wget https://raw.githubusercontent.com/EudesRobin/webui-oardocker/master/init.sh && chmod +x init.sh && sudo ./init.sh"
+sudo oardocker exec frontend "wget https://raw.githubusercontent.com/EudesRobin/webui-oardocker/master/custom_setup/init.sh && chmod +x init.sh && sudo ./init.sh"
 ```
+The webui is now available at : [http://localhost:48080/webui-oardocker/](http://localhost:48080/webui-oardocker/)
 
-Votre webui est accessible à l'adresse : [http://localhost:48080/webui-oardocker/](http://localhost:48080/webui-oardocker/)
+Soon, the installation of the webui will be merge with the build process.
