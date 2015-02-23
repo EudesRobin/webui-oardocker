@@ -48,16 +48,29 @@ if($_GET['id']==0)
 
 			foreach ($json_array['items'] as $key => $value) {
 			    echo '<tr><td>'.$value['id'].'</td>'.'<td>'.$value['network_address'].'</td>';
-			    if(!strpos($value['state'],'Alive')){
-				$alive++;
-				echo '<td><a href="info_node.php?id='.($value['id']%2).'" role="button" class="btn btn-lg btn-success">'.$value['state'].'</a></td></tr>';
-			   }else if(!strpos($value['state'],'Absent')){
-				$absent++;
-				echo '<td><input type="button" class="btn btn-lg btn-warning">'.$value['state'].'</button></td></tr>';
-			  }else{
-				$dead++;
-				echo '<td><input type="button" class="btn btn-lg btn-danger">'.$value['state'].'</button></td></tr>';
-			  }
+			    if(($value['id']%2)==0){
+			    	if(!strpos($value['state'],'Alive')){
+					$alive++;
+					echo '<td><a href="info_node.php?id='.$value['id'].'" role="button" class="btn btn-lg btn-success">'.$value['state'].'</a></td></tr>';
+				    }else if(!strpos($value['state'],'Absent')){
+					$absent++;
+					echo '<td><input type="button" class="btn btn-lg btn-warning">'.$value['state'].'</button></td></tr>';
+				    }else{
+					$dead++;
+					echo '<td><input type="button" class="btn btn-lg btn-danger">'.$value['state'].'</button></td></tr>';
+				    }
+			    }else{
+			    	if(!strpos($value['state'],'Alive')){
+					$alive++;
+					echo '<td><a href="info_node.php?id='.($value['id']-1).'" role="button" class="btn btn-lg btn-success">'.$value['state'].'</a></td></tr>';
+				    }else if(!strpos($value['state'],'Absent')){
+					$absent++;
+					echo '<td><a href="info_node.php?id='.($value['id']-1).'" role="button" class="btn btn-lg btn-warning">'.$value['state'].'</a></td></tr>';
+				    }else{
+					$dead++;
+					echo '<td><a href="info_node.php?id='.($value['id']-1).'" role="button" class="btn btn-lg btn-danger">'.$value['state'].'</a></td></tr>';
+				    }
+			    }
 			}
 	              echo '
 	            </tbody>
