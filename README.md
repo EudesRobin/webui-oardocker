@@ -4,8 +4,8 @@ Quick install :
   * Requirements :
   Follow the instructions given on [oar-docker github](https://github.com/oar-team/oar-docker) to init the environment
 
-  Be careful about docker, iy you are using Ubuntu 14.04, the package name is docker.io ( and notre juste only docker !).
-  A detail procedure to install the latest docker version is available on the wiki.
+  Be careful about docker, if you are using Ubuntu 14.04, the package name is docker.io ( and notre juste only docker !).
+  Some help to install the latest docker version is available on the wiki.
 
 Once the environment is setup, we can start a simulation.
 ```
