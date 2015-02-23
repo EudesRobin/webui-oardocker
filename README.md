@@ -7,7 +7,7 @@ __Projet RICM4 - EUDES Robin & ROSSI Ombeline__
       Some help to install the latest docker version is available on the wiki.
 
 
-Here, an example to instll your oar-docker environment ( you must have install docker.io and oar-docker ):
+Here, an example to install your oar-docker environment ( you must have install docker.io and oar-docker ):
 ```
 # Create a directory for your oar-docker environment
 mkdir ~/oardocker
