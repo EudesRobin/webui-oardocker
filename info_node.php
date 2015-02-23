@@ -56,7 +56,7 @@ if($_GET['id']==0)
 				 if(cpt%2==0){
 				 	$id++;
 				 }
-				 cpt++;
+				 $cpt++;
 			}
 	              echo '
 	            </tbody>
