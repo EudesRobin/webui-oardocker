@@ -43,23 +43,3 @@ echo "<Directory \"/var/www\">
 <Directory \"/var/www/webui-oardocker/.git\">
         deny from all
 </Directory>" >> /etc/apache2/apache2.conf
-
-echo " modification of oarpi-priv auth file ( same as webui...) "
-echo "ScriptAlias /oarapi-priv /usr/local/lib/cgi-bin/oarapi/oarapi.cgi
-ScriptAlias /oarapi-priv-debug /usr/local/lib/cgi-bin/oarapi/oarapi.cgi
-
-<Location /oarapi-priv>
- Options ExecCGI -MultiViews FollowSymLinks
- AuthType      basic
- AuthUserfile  /etc/apache2/.htpasswd
- AuthName      \"OAR API authentication\"
- Require valid-user
- #RequestHeader set X_REMOTE_IDENT %{REMOTE_USER}e
- RewriteEngine On
- RewriteCond %{REMOTE_USER} (.*)
- RewriteRule .* - [E=MY_REMOTE_IDENT:%1]
- RequestHeader add X-REMOTE_IDENT %{MY_REMOTE_IDENT}e
-</Location> " > /etc/oar/apache2/oar-restful-api-priv.conf
-
-echo " modification oar so we can generate resources "
-echo "API_RESOURCES_LIST_GENERATION_CMD=\"/usr/sbin/oar_resources_add -Y\"" >> /etc/oar/oar.conf
