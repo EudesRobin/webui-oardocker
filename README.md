@@ -1,5 +1,8 @@
 __Projet RICM4 - EUDES Robin & ROSSI Ombeline__
 
+
+[![Stories in Ready](https://badge.waffle.io/eudesrobin/webui-oardocker.svg?label=ready&title=Ready)](http://waffle.io/eudesrobin/webui-oardocker)
+
 **Quick install**
   * Requirements :
     * Follow instructions given on [oar-docker github](https://github.com/oar-team/oar-docker) to install oar-docker.
