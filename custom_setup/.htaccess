@@ -1,2 +1,0 @@
-#Forbid access to the custom setup directory
-deny from all

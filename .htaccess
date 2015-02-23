@@ -1,7 +1,0 @@
-AuthUserFile "/etc/apache2/.htpasswd"
-AuthGroupFile "/etc/apache2"
-AuthName Authentification
-AuthType Basic
-<Limit GET POST>
-require user docker
-</Limit>
