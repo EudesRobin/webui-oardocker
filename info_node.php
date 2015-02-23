@@ -53,7 +53,7 @@ if($_GET['id']==0)
 					$dead++;
 					echo '<td><a href="info_node.php?id='.$id.'" role="button" class="btn btn-lg btn-danger">'.$value['state'].'</a></td></tr>';
 				    }
-				 if(cpt%2==0){
+				 if($cpt%2==0){
 				 	$id++;
 				 }
 				 $cpt++;
