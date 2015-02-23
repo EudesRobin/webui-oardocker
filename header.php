@@ -39,7 +39,7 @@ echo
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.php">Vue générale</a></li>
+            <li><a href="index.php">General view</a></li>
             <li><a href="../monika/">Monika</a></li>
             <li><a href="../drawgantt-svg/">Graphe Gant</a></li>
           </ul>
