@@ -39,7 +39,7 @@ if($_GET['id']==0)
 			    echo '<tr><td>'.$value['id'].'</td>'.'<td>'.$value['network_address'].'</td>';
 			    if(!strpos($value['state'],'Alive')){
 				$alive++;
-				echo '<td><a href="info_node?id="'.$value['state'].'" role="button" class="btn btn-lg btn-success">'.$value['state'].'</a></td></tr>';
+				echo '<td><a href="info_node.php?id='.$value['id'].'" role="button" class="btn btn-lg btn-success">'.$value['state'].'</a></td></tr>';
 			   }else if(!strpos($value['state'],'Absent')){
 				$absent++;
 				echo '<td><input type="button" class="btn btn-lg btn-warning">'.$value['state'].'</button></td></tr>';
