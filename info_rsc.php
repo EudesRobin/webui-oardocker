@@ -1,4 +1,7 @@
 <?php
+	include 'header.php';
+	include 'json_request.php';
+
 	$title = 'Details of '.$_GET['network_id'];
 	gen_header($title);
 	
@@ -39,7 +42,8 @@
    <th>state_num</th>
    <th>type</th>
    <th>next_state</th>
-	              </tr>'.
+	              </tr>';
+
 			for($i=0;$i<$json_grp['total'];$i++){
 				$url_rsc_details = 'http://localhost:48080/oarapi/resources/'.$i.'json';
 				$json_rsc_details = json_request($url_rsc_details);
@@ -51,7 +55,9 @@
 			}
 	              
 	            echo '</thead>
-	            <tbody>';
+			</tbody>
+	          </table>
+	        </div></div>';
 	
-	
+include 'footer.php';
 ?>
