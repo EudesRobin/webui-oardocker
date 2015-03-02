@@ -39,12 +39,11 @@ if(empty($_GET['id']))
 	              </tr>
 	            </thead>
 	            <tbody>';
-			//parcours json_array
-			$taille = count($json_array['items']);
 
 			$alive = 0;
 			$absent = 0;
 			$dead =0;
+			
 
 			foreach ($json_array['items'] as $key => $value) {
 			    echo '<tr><td>'.$value['id'].'</td>'.'<td>'.$value['network_address'].'</td>';
@@ -65,9 +64,9 @@ if(empty($_GET['id']))
 	        </div></div>';
 	     // Barre de  "vie" des nodes...
 	      echo '<div class="page-header"><h1>Current state</h1></div><div class="progress">
-	        <div class="progress-bar progress-bar-success" style="width: '.($alive/$taille*100).'%"><span class="sr-only">Complete (success)</span></div>
-	        <div class="progress-bar progress-bar-warning" style="width: '.($absent/$taille*100).'%"><span class="sr-only">Complete (warning)</span></div>
-	        <div class="progress-bar progress-bar-danger" style="width: '.($dead/$taille*100).'%"><span class="sr-only">Complete (danger)</span></div>
+	        <div class="progress-bar progress-bar-success" style="width: '.($alive/$json_array['total']*100).'%"><span class="sr-only">Complete (success)</span></div>
+	        <div class="progress-bar progress-bar-warning" style="width: '.($absent/$json_array['total']*100).'%"><span class="sr-only">Complete (warning)</span></div>
+	        <div class="progress-bar progress-bar-danger" style="width: '.($dead/$json_array['total']*100).'%"><span class="sr-only">Complete (danger)</span></div>
 		</div></div></div>';
 
 include 'footer.php';
