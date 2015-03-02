@@ -8,6 +8,7 @@ __Projet RICM4 - EUDES Robin & ROSSI Ombeline__
     * Follow instructions given on [oar-docker github](https://github.com/oar-team/oar-docker) to install oar-docker.
     * Be careful about docker, if you are using Ubuntu 14.04, the package name is docker.io ( and notre juste only docker !).
       Some help to install the latest docker version is available on the wiki.
+    * You should also add your user to the docker group, to avoid any "sudo" commands with oardocker ([some help](https://docs.docker.com/installation/ubuntulinux/#giving-non-root-access) )
 
 
 Here, an example to install your oar-docker environment ( you must have install docker.io and oar-docker ):
