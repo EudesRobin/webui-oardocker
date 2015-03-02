@@ -3,8 +3,6 @@ include 'header.php';
 
 include 'json_request.php';
 
-if(empty($_GET['id']))
-{
 	gen_header("General view");
 	$url = 'http://localhost/oarapi/resources.json';
 
@@ -15,17 +13,6 @@ if(empty($_GET['id']))
 	<div class="page-header">
 	    <h1>State of each cores </h1></div>';
 
-}else{
-		gen_header('Details of '.$_GET['id']);
-		$url = 'http://localhost/oarapi/resources/nodes/'.$_GET['id'].'.json';
-
-		echo '<div class="container theme-showcase" role ="main">
-		<div class="jumbotron">
-		<h1>Details of the node'.$_GET['id'].'</h1>
-		</div>
-		<div class="page-header">
-	    	<h1>State of each cores </h1></div>';
-}
 	$json_array  = json_request($url);
 
 	echo '      <div class="row">
@@ -49,13 +36,13 @@ if(empty($_GET['id']))
 			    echo '<tr><td>'.$value['id'].'</td>'.'<td>'.$value['network_address'].'</td>';
 			    	if(strcmp($value['state'],"Alive")==0){
 					$alive++;
-					echo '<td><a href="info_node.php?id='.$value['network_address'].'" role="button" class="btn btn-lg btn-success">'.$value['state'].'</a></td></tr>';
+					echo '<td><a href="info_rsc.php?network_id='.$value['network_address'].'" role="button" class="btn btn-lg btn-success">'.$value['state'].'</a></td></tr>';
 				    }else if(strcmp($value['state'],"Absent")==0){
 					$absent++;
-					echo '<td><a href="info_node.php?id='.$value['network_address'].'" role="button" class="btn btn-lg btn-warning">'.$value['state'].'</a></td></tr>';
+					echo '<td><a href="info_rsc.php?network_id='.$value['network_address'].'" role="button" class="btn btn-lg btn-warning">'.$value['state'].'</a></td></tr>';
 				    }else{
 					$dead++;
-					echo '<td><a href="info_node.php?id='.$value['network_address'].'" role="button" class="btn btn-lg btn-danger">'.$value['state'].'</a></td></tr>';
+					echo '<td><a href="info_rsc.php?network_id='.$value['network_address'].'" role="button" class="btn btn-lg btn-danger">'.$value['state'].'</a></td></tr>';
 				    }
 			}
 	              echo '
