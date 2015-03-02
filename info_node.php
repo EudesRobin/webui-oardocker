@@ -16,8 +16,8 @@ if($_GET['id']==0)
 	    <h1>State of each cores </h1></div>';
 
 }else{
-		gen_header('Details of the node'.$_GET['id']);
-		$url = 'http://localhost/oarapi/resources/nodes/node'.$_GET['id'].'.json';
+		gen_header('Details of '.$_GET['id']);
+		$url = 'http://localhost/oarapi/resources/nodes/'.$_GET['id'].'.json';
 
 		echo '<div class="container theme-showcase" role ="main">
 		<div class="jumbotron">
@@ -45,25 +45,19 @@ if($_GET['id']==0)
 			$alive = 0;
 			$absent = 0;
 			$dead =0;
-			$id=1;
-			$cpt=1;
 
 			foreach ($json_array['items'] as $key => $value) {
 			    echo '<tr><td>'.$value['id'].'</td>'.'<td>'.$value['network_address'].'</td>';
 			    	if(!strpos($value['state'],'Alive')){
 					$alive++;
-					echo '<td><a href="info_node.php?id='.$id.'" role="button" class="btn btn-lg btn-success">'.$value['state'].'</a></td></tr>';
+					echo '<td><a href="info_node.php?id='.$value['network_address'].'" role="button" class="btn btn-lg btn-success">'.$value['state'].'</a></td></tr>';
 				    }else if(!strpos($value['state'],'Absent')){
 					$absent++;
-					echo '<td><a href="info_node.php?id='.$id.'" role="button" class="btn btn-lg btn-warning">'.$value['state'].'</a></td></tr>';
+					echo '<td><a href="info_node.php?id='.$value['network_address'].'" role="button" class="btn btn-lg btn-warning">'.$value['state'].'</a></td></tr>';
 				    }else{
 					$dead++;
-					echo '<td><a href="info_node.php?id='.$id.'" role="button" class="btn btn-lg btn-danger">'.$value['state'].'</a></td></tr>';
+					echo '<td><a href="info_node.php?id='.$value['network_address'].'" role="button" class="btn btn-lg btn-danger">'.$value['state'].'</a></td></tr>';
 				    }
-				 if($cpt%2==0){
-				 	$id++;
-				 }
-				 $cpt++;
 			}
 	              echo '
 	            </tbody>
