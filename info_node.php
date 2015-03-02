@@ -48,10 +48,10 @@ if(empty($_GET['id']))
 
 			foreach ($json_array['items'] as $key => $value) {
 			    echo '<tr><td>'.$value['id'].'</td>'.'<td>'.$value['network_address'].'</td>';
-			    	if(!strpos($value['state'],'Alive')){
+			    	if(strcmp($value['state'],"Alive")==0){
 					$alive++;
 					echo '<td><a href="info_node.php?id='.$value['network_address'].'" role="button" class="btn btn-lg btn-success">'.$value['state'].'</a></td></tr>';
-				    }else if(!strpos($value['state'],'Absent')){
+				    }else if(strcmp($value['state'],"Absent")==0){
 					$absent++;
 					echo '<td><a href="info_node.php?id='.$value['network_address'].'" role="button" class="btn btn-lg btn-warning">'.$value['state'].'</a></td></tr>';
 				    }else{
