@@ -6,9 +6,9 @@ echo "Git & curl setup"
 apt-get -y install git-core php5-curl
 
 echo " Node.js setup"
-wget -O /tmp/node-v0.12.0-linux-x64.tar.gz http://nodejs.org/dist/v0.12.0/node-v0.12.0-linux-x64.tar.gz
-cd /usr/local && tar --strip-components 1 -xzf /tmp/node-v0.12.0-linux-x64.tar.gz
-rm /tmp/node-v0.12.0-linux-x64.tar.gz
+wget -O /tmp/node-v0.10.1-linux-x64.tar.gz http://nodejs.org/dist/v0.10.1/node-v0.10.1-linux-x64.tar.gz
+cd /usr/local && tar --strip-components 1 -xzf /tmp/node-v0.10.1-linux-x64.tar.gz
+rm /tmp/node-v0.10.1-linux-x64.tar.gz
 
 echo "Boostrap setup"
 cd /var/www
