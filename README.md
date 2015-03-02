@@ -21,6 +21,7 @@ oardocker init
 
 # Custom frontend install, to include our webui
 cd ~/oardocker/.oardocker/images/frontend
+rm custom_setup.sh #delete original & empty script
 wget https://raw.githubusercontent.com/EudesRobin/webui-oardocker/master/custom_setup/frontend/custom_setup.sh
 
 # oar-docker build
@@ -36,8 +37,6 @@ Once the environment is installed, we can start a simulation.
 ```
 sudo oardocker start -n <nb> 2 <nb> # start a simulation with 2 nodes.
 
-# If you want to be able to generate more nodes (optionnal)
-oardocker exec frontend "sudo /var/www/webui-oardocker/custom_setup/frontend/post_install.sh"
 ```
 The webui is now available at : [http://localhost:48080/webui-oardocker/](http://localhost:48080/webui-oardocker/)
 
