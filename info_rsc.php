@@ -2,28 +2,31 @@
 	include 'header.php';
 	include 'json_request.php';
 
+	// Title
 	$title = 'Details of '.$_GET['network_id'];
 	gen_header($title);
 
 	// On recup toute les rsc associées au network_id
 	$url = 'http://localhost/oarapi/resources/nodes/'.$_GET['network_id'].'.json';
-	
 	$json_grp  = json_request($url);
 	
-	echo '<div class="jumbotron">
-        <h1>Details</h1>
-        </div>';
+	echo '
+	<div class="jumbotron">
+        	<h1>Details</h1>
+        </div>
+	<div class="container theme-showcase" role ="main">
+		<div class="page-header">
+	    	<h1>State of each cores </h1>
+	    	</div>';
 
-	echo '<div class="container theme-showcase" role ="main">';
-	echo '<div class="page-header">
-	    <h1>State of each cores </h1></div>';
-
+	// begin table
 	echo '<div class="row">
 	        <div class="col-md-6">
 	          <table class="table table">
 	            <thead>
 	                <tr>';
 
+	// First, we get for each resource identified by id some specifics informations
 	$array_rsc = array();
 	for($i=0;$i<$json_grp['total'];$i++){
 		echo'<th></th>';
@@ -33,7 +36,7 @@
 	}
 
 	echo '</tr></thead><tbody>';
-
+   // And now, we can display, in line, for each rsc the value of the propriety...
    echo '<tr><th>scheduler_priority</th>';
    for($i=0;$i<$json_grp['total'];$i++){
    	echo '<td>'.$array_rsc[$i]['scheduler_priority'].'</td>';
@@ -106,6 +109,7 @@
    }
    echo '</tr>';
 
+   // these links can be deducted or will be add in an other part on the webui
    //echo '<tr><th>links_grappe</th></tr>';
    //echo '<tr><th>links_core</th></tr>';
    //echo '<tr><th>links_jobs</th></tr>';
@@ -185,6 +189,6 @@
 		</tbody>
 	    </table>
 	</div></div></div>';
-	
+	// end table
 include 'footer.php';
 ?>
