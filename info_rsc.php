@@ -28,11 +28,13 @@
 
 	
    
-   echo '<tr><th>scheduler_priority</th>';
+   echo '<tr><td>scheduler_priority</td>';
    for($i=0;$i<$json_grp['total'];$i++){
    	echo '<td>'.$array_rsc[$i]['scheduler_priority'].'</td>';
    }
-   echo '<tr><th>finaud_decision</th></tr>';
+   echo '</tr>';
+   /*
+   echo '<tr><td>finaud_decision</td></tr>';
    echo '<tr><th>core</th></tr>';
    echo '<tr><th>deploy</th></tr>';
    echo '<tr><th>besteffort</th></tr>';
@@ -58,6 +60,7 @@
    echo '<tr><th>state_num</th></tr>';
    echo '<tr><th>type</th></tr>';
    echo '<tr><th>next_state</th></tr>';
+   */
 
 	echo '		
 			</tbody>
