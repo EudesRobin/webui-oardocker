@@ -3,7 +3,7 @@ include 'header.php';
 
 include 'json_request.php';
 
-if($_GET['id']==0)
+if(empty($_GET['id']))
 {
 	gen_header("General view");
 	$url = 'http://localhost/oarapi/resources.json';

@@ -1,6 +1,6 @@
 <?php
 
-$id =0;
+$id ="";
 
 include 'info_node.php';
 
