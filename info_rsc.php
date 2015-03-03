@@ -107,10 +107,10 @@
 			echo '<td>'.'1'.'</td>';
 			break;
 		case 2147483647:
-			echo '<td>'.'Forever'.'</td>';
+			echo '<td>'.'Forever waking-up'.'</td>';
 			break;
 		case 2147483646:
-			echo '<td>'.'2147483646'.'</td>';
+			echo '<td>'.'Forever'.'</td>';
 			break;
 	}
    }
