@@ -134,7 +134,7 @@
 
    echo '<tr><th>api_timestamp</th>';
    for($i=0;$i<$json_grp['total'];$i++){
-        echo '<td>'.$array_rsc[$i]['api_timestamp'].'</td>';
+        echo '<td>'.date('d/m/y',$array_rsc[$i]['api_timestamp']).'</td>';
    }
    echo '</tr>';
 
