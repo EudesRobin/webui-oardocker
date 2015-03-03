@@ -28,8 +28,8 @@
 
 	// First, we get for each resource identified by id some specifics informations
 	$array_rsc = array();
-	for($i=0;$i<$json_grp['total'];$i++){
-		echo'<th></th>';
+	echo'<th></th>';
+	for($i=0;$i<$json_grp['total'];$i++){		
 		echo '<th>'.$json_grp['items'][$i]['id'].'</th>';
 		$details = 'http://localhost/oarapi/resources/'.$json_grp['items'][$i]['id'].'.json';
 		$array_rsc[] = json_request($details);
@@ -99,7 +99,20 @@
 
    echo '<tr><th>available_upto</th>';
    for($i=0;$i<$json_grp['total'];$i++){
-        echo '<td>'.$array_rsc[$i]['available_upto'].'</td>';
+	switch($array_rsc[$i]['available_upto']){
+		case 0:
+			echo '<td>'.'0'.'</td>';
+			break;
+		case 1:
+			echo '<td>'.'1'.'</td>';
+			break;
+		case 2147483647:
+			echo '<td>'.'Forever waking-up'.'</td>';
+			break;
+		case 2147483646:
+			echo '<td>'.'Forever'.'</td>';
+			break;
+	}
    }
    echo '</tr>';
 
@@ -121,7 +134,7 @@
 
    echo '<tr><th>api_timestamp</th>';
    for($i=0;$i<$json_grp['total'];$i++){
-        echo '<td>'.$array_rsc[$i]['api_timestamp'].'</td>';
+        echo '<td>'.date('d/m/y',$array_rsc[$i]['api_timestamp']).'</td>';
    }
    echo '</tr>';
 
