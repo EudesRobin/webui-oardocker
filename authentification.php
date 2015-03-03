@@ -9,7 +9,7 @@
 			} else {
 				session_start();
 				$_SESSION['login'] = LOGIN;
-				header('Location: http://localhost/webui-oardocker/index.php');
+				header('Location: http://localhost:48080/webui-oardocker/index.php');
 				exit();
 			}
 		} else {
