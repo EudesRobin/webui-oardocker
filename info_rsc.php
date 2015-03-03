@@ -99,7 +99,20 @@
 
    echo '<tr><th>available_upto</th>';
    for($i=0;$i<$json_grp['total'];$i++){
-        echo '<td>'.$array_rsc[$i]['available_upto'].'</td>';
+	switch($array_rsc[$i]['available_upto']){
+		case 0:
+			echo '<td>'.'0'.'</td>';
+			break;
+		case 1:
+			echo '<td>'.'1'.'</td>';
+			break;
+		case 2147483647:
+			echo '<td>'.'Forever'.'</td>';
+			break;
+		case 2147483646:
+			echo '<td>'.'2147483646'.'</td>';
+			break;
+	}
    }
    echo '</tr>';
 
