@@ -2,6 +2,7 @@
 include 'header.php';
 
 include 'json_request.php';
+session_start(); 
 
 	gen_header("General view");
 	$url = 'http://localhost/oarapi/resources.json';

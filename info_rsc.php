@@ -1,6 +1,7 @@
 <?php
 	include 'header.php';
 	include 'json_request.php';
+	session_start(); 
 
 	// Title
 	$title = 'Details of '.$_GET['network_id'];
