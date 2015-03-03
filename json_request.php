@@ -11,9 +11,35 @@ curl_close($ch);
 return json_decode($result,true);
 }
 
-function json_post(){
+function json_post($resource,$name,$properties,$command,$type,$reservation,$directory){
 
-$data = array("resource" => "/nodes=1,walltime=00:10:00", "command" => "sleep 600");
+$data = array();
+
+if(!empty($resource) && !empty($command) ){
+$data['resource'] = $resource;
+$data['command'] = $command;
+}
+
+if(!empty($name)){
+$data['name'] = $name;
+}
+
+if(!empty($properties)){
+$data['property'] = $properties;
+}
+
+if(!empty($type)){
+$data['type'] = $type;
+}
+
+if(!empty($reservation)){
+$data['reservation'] = $reservation;
+}
+
+if(!empty($directory)){
+$data['directory'] = $directory;
+}
+
 $data_string = json_encode($data);
 
 $ch = curl_init('http://docker:docker@localhost/oarapi-priv/jobs.json');
