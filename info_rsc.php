@@ -28,8 +28,8 @@
 
 	// First, we get for each resource identified by id some specifics informations
 	$array_rsc = array();
-	for($i=0;$i<$json_grp['total'];$i++){
-		echo'<th></th>';
+	echo'<th></th>';
+	for($i=0;$i<$json_grp['total'];$i++){		
 		echo '<th>'.$json_grp['items'][$i]['id'].'</th>';
 		$details = 'http://localhost/oarapi/resources/'.$json_grp['items'][$i]['id'].'.json';
 		$array_rsc[] = json_request($details);
