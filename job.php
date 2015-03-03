@@ -2,7 +2,7 @@
 include 'header.php';
 
 include 'json_request.php';
-session_start(); 
+session_start();
 
 gen_header("Submit jobs");
 
