@@ -43,7 +43,7 @@ echo
             <li><a href="index.php">General view</a></li>
             <li><a href="../monika/">Monika</a></li>
             <li><a href="../drawgantt-svg/">Graphe Gant</a></li>
-	    <li><a href="custom_setup/authentification.php/">Authentification</a></li>
+	    <li><a href="authentification.php">Authentification</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

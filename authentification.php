@@ -1,6 +1,5 @@
 <?php
-	define('LOGIN','docker');
-	define('PASSWORD','docker');
+	include 'custom_setup/credentials.php';
 	$errorMessage = '';
 
 	if(!empty($_POST)){
