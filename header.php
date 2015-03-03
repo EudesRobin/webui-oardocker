@@ -34,6 +34,7 @@ echo
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">WEBUI</a>
         </div>
@@ -42,6 +43,7 @@ echo
             <li><a href="index.php">General view</a></li>
             <li><a href="../monika/">Monika</a></li>
             <li><a href="../drawgantt-svg/">Graphe Gant</a></li>
+	    <li><a href="custom_setup/authentification.php/">Authentification</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
