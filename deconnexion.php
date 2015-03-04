@@ -8,6 +8,8 @@ $_SESSION = array();
 session_destroy();
 // Destruction du tableau de session
 unset($_SESSION);
+
+echo'Vous avez été correctement déconnecté.';
 header('Location : http://localhost:48080/webui-oardocker/index.php');
 exit();
 
