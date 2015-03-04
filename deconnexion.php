@@ -9,8 +9,8 @@ session_destroy();
 // Destruction du tableau de session
 unset($_SESSION);
 
-echo'Vous avez été correctement déconnecté.';
-header('Location : http://localhost:48080/webui-oardocker/index.php');
+echo'Vous avez ete correctement deconnecte.';
+header("Refresh: 5; http://localhost:48080/webui-oardocker/index.php");
 exit();
 
 ?>
