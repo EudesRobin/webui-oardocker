@@ -13,6 +13,7 @@ session_start();
 	</div>
 	<div class="page-header">
 	    <h1>State of each cores </h1></div>';
+	echo $_SESSION['login'];
 
 	$json_array  = json_request($url);
 
