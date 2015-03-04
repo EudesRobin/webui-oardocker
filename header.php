@@ -42,11 +42,11 @@ echo
           <ul class="nav navbar-nav">
             <li><a href="index.php">General view</a></li>
             <li><a href="../monika/">Monika</a></li>
-            <li><a href="../drawgantt-svg/">Graphe Gant</a></li>'
+            <li><a href="../drawgantt-svg/">Graphe Gant</a></li>';
 		if ($_SESSION['login'] == 'docker') {
-			echo '<li><a href="authentification.php">Se déconnecter (docker)</a></li>'
+			echo '<li><a href="authentification.php">Se déconnecter (docker)</a></li>';
 		} else {
-	    echo '<li><a href="authentification.php">Authentification</a></li>'
+	    echo '<li><a href="authentification.php">Authentification</a></li>';
 		}
          echo '</ul>
         </div><!--/.nav-collapse -->
