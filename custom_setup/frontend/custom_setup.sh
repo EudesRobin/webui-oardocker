@@ -11,7 +11,7 @@ git clone https://github.com/EudesRobin/webui-oardocker.git
 
 echo " custom apache config "
 
-<Directory \"/var/www/webui-oardocker/custom_setup\">
+echo " <Directory \"/var/www/webui-oardocker/custom_setup\">
         deny from all
 </Directory>
 
