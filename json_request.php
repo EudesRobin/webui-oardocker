@@ -1,4 +1,5 @@
 <?php
+session_start();
 function json_request($url){
 
 $ch = curl_init();
@@ -42,7 +43,7 @@ $data['directory'] = $directory;
 
 $data_string = json_encode($data);
 
-$ch = curl_init('http://docker:docker@localhost/oarapi-priv/jobs.json');
+$ch = curl_init('http://'.$_SESSION['login'].':'.$_SESSION['pwd'].'@localhost/oarapi-priv/jobs.json');
 
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
@@ -53,7 +54,6 @@ $result = curl_exec($ch);
 
 curl_close($ch);
 return json_decode($result,true);
-
 }
 
 ?>

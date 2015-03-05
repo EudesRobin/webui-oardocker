@@ -9,14 +9,14 @@ echo '<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Oar-docker Webui">
     <meta name="author" content="Eudes Robin - Rossi Ombeline">
-    <link rel="icon" href="./favicon.ico">
+    <link rel="icon" href="/webui-oardocker/favicon.ico">
 
     <title>'.$title.'</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/webui-oardocker/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
-    <link href="./bootstrap-3.3.2-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/webui-oardocker/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -40,16 +40,16 @@ echo
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.php">General view</a></li>
-            <li><a href="../monika/">Monika</a></li>
-            <li><a href="../drawgantt-svg/">Graphe Gant</a></li>';
-		if ($_SESSION['login'] == 'docker') {
-			echo '<li><a href="deconnexion.php">Se déconnecter (docker)</a></li>';
+            <li><a href="/webui-oardocker/index.php">General view</a></li>
+            <li><a href="/monika/">Monika</a></li>
+            <li><a href="/drawgantt-svg/">Graphe Gant</a></li>';
+		if (isset($_SESSION['login'])) {
+			echo '<li><a href="/webui-oardocker/auth/deconnexion.php">Se déconnecter ('.($_SESSION['login']).')</a></li>';
 		} else {
-	    echo '<li><a href="authentification.php">Authentification</a></li>';
+	    echo '<li><a href="/webui-oardocker/auth/authentification.php">Authentification</a></li>';
 		}
          echo '</ul>
-        </div><!--/.nav-collapse -->
+        </div><!--nav-collapse -->
       </div>
     </nav>';
 }
