@@ -1,4 +1,5 @@
 <?php
+session_start();
 function gen_header($title)
 {
 echo '<!DOCTYPE html>

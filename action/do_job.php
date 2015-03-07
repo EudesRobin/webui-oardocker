@@ -1,6 +1,17 @@
 <?php
 	// def functions for json
 	include('json_functions.php');
+	include('../header.php');
+	gen_geader('Command Output');
+	
+	if(!isset($_SESSION['login'])){
+		header('location:/webui-oardocker/auth/redirect_login.php?pb=nolog');
+		exit();
+	}
+	if(strcmp($_SESSION['login'],"docker"!=0)){
+		header('location:/webui-oardocker/auth/redirect_login.php?pb=wronguser');
+		exit();
+	}
 	if(!empty($_POST['command'])&&!empty($_POST['resource'])){
 
 	// For now, we just dump de json result
@@ -8,6 +19,9 @@
 	var_dump($r);
 	}else{
 	// minimals parameters for the json request
-	echo 'Invalid job, you must submit a request with at least a targeted resource and a command to do';
+		header("location:{$SERVER['HTTP_REFERER']}");
+		exit();
 	}
+
+include '../footer.php';
 ?>
