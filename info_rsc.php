@@ -10,23 +10,23 @@
 	$url = 'http://localhost/oarapi/resources/nodes/'.$_GET['network_id'].'.json';
 	$json_grp  = json_request_simple_url($url);
 	
-	echo '
-	<div class="jumbotron">
-        	<h1>Details</h1>
-        </div>
-	<div class="container theme-showcase" role ="main">
-		<div class="page-header">
-	    	<h1>State of each cores </h1>
-	    	</div>
-    <div class="row">
-	   <div class="col-md-6">
-	     <table class="table table">
-	       <thead>
-	         <tr>';
+echo '
+<div class="container theme-showcase" role ="main">
+  <div class="jumbotron">
+    <h1>Details</h1>
+  </div><!--end jumbotron -->
+  <div class="page-header">
+    <h1>Property of resources associated to the node</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+    <!--begining table -->
+      <table class="table table-striped">
+        <thead>';
 
 	// First, we get for each resource identified by id some specifics informations
 	$array_rsc = array();
-	echo'<th></th>';
+	echo'  <th></th>';
 
 	for($i=0;$i<$json_grp['total'];$i++){
 		$details = 'http://localhost/oarapi/resources/'.$json_grp['items'][$i]['id'].'.json';
@@ -34,10 +34,13 @@
 	}
 
 	for($i=0;$i<$json_grp['total'];$i++){
-		echo '<th><a href="job.php?id='.$array_rsc[$i]['id'].'&cpu='.$array_rsc[$i]['cpu'].'" role="button" class="btn btn-lg btn-primary">send job</a></th>';
+		echo '
+      <th><a href="job.php?id='.$array_rsc[$i]['id'].'&cpu='.$array_rsc[$i]['cpu'].'" role="button" class="btn btn-lg btn-primary">Submit a job</a></th>';
 	}
 
-	echo '</tr></thead><tbody>';
+	echo '</tr>
+      </thead>
+    <tbody>';
    // And now, we can display, in line, for each rsc the value of the propriety...
    echo '<tr><th>scheduler_priority</th>';
    for($i=0;$i<$json_grp['total'];$i++){
