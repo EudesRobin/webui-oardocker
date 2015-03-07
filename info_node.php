@@ -1,23 +1,20 @@
 <?php
 include 'header.php';
 
-include 'json_request.php';
-session_start(); 
+include '/webui-oardocker/action/json_functions.php';
 
+	session_start(); 
 	gen_header("General view");
 	$url = 'http://localhost/oarapi/resources.json';
+	$json_array  = json_request_simple_url($url);
 
 	echo '<div class="container theme-showcase" role ="main">
 	<div class="jumbotron">
 	<h1>General view of the nodes</h1>
 	</div>
 	<div class="page-header">
-	    <h1>State of each cores </h1></div>';
-	
-
-	$json_array  = json_request($url);
-
-	echo '      <div class="row">
+	    <h1>State of each cores </h1></div>
+	    <div class="row">
 	        <div class="col-md-6">
 	          <table class="table table-striped">
 	            <thead>
@@ -47,10 +44,11 @@ session_start();
 					echo '<td><a href="info_rsc.php?network_id='.$value['network_address'].'" role="button" class="btn btn-lg btn-danger">Details - submit a job</a></td></tr>';
 				    }
 			}
-	              echo '
+	        echo '
 	            </tbody>
 	          </table>
 	        </div></div>';
+
 	     // Barre de  "vie" des nodes...
 	      echo '<div class="page-header"><h1>Current state</h1></div><div class="progress">
 	        <div class="progress-bar progress-bar-success" style="width: '.($alive/$json_array['total']*100).'%"><span class="sr-only">Complete (success)</span></div>

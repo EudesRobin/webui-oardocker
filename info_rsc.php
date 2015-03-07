@@ -1,6 +1,6 @@
 <?php
 	include 'header.php';
-	include 'json_request.php';
+	include '/webui-oardocker/json_functions.php';
 	session_start(); 
 
 	// Title
@@ -9,7 +9,7 @@
 
 	// On recup toute les rsc associées au network_id
 	$url = 'http://localhost/oarapi/resources/nodes/'.$_GET['network_id'].'.json';
-	$json_grp  = json_request($url);
+	$json_grp  = json_request_simple_url($url);
 	
 	echo '
 	<div class="jumbotron">
@@ -18,14 +18,12 @@
 	<div class="container theme-showcase" role ="main">
 		<div class="page-header">
 	    	<h1>State of each cores </h1>
-	    	</div>';
-
-	// begin table
-	echo '<div class="row">
-	        <div class="col-md-6">
-	          <table class="table table">
-	            <thead>
-	                <tr>';
+	    	</div>
+    <div class="row">
+	   <div class="col-md-6">
+	     <table class="table table">
+	       <thead>
+	         <tr>';
 
 	// First, we get for each resource identified by id some specifics informations
 	$array_rsc = array();
@@ -33,7 +31,7 @@
 
 	for($i=0;$i<$json_grp['total'];$i++){
 		$details = 'http://localhost/oarapi/resources/'.$json_grp['items'][$i]['id'].'.json';
-		$array_rsc[] = json_request($details);
+		$array_rsc[] = json_request_simple_url($details);
 	}
 
 	for($i=0;$i<$json_grp['total'];$i++){
@@ -127,10 +125,6 @@
    }
    echo '</tr>';
 
-   // these links can be deducted or will be add in an other part on the webui
-   //echo '<tr><th>links_grappe</th></tr>';
-   //echo '<tr><th>links_core</th></tr>';
-   //echo '<tr><th>links_jobs</th></tr>';
    echo '<tr><th>cpu</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['cpu'].'</td>';

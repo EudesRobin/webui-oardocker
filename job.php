@@ -1,7 +1,6 @@
 <?php
 include 'header.php';
 
-include 'json_request.php';
 session_start();
 
 gen_header("Submit jobs");
@@ -18,7 +17,7 @@ echo '<div class="container theme-showcase" role ="main">
 	echo '
 	<div class="row">
 	    <div class="col-md-6">
-			<form action="action_job.php" method="post">
+			<form action="/webui-oardocker/action/do_job.php" method="post">
 				<table class="table table-striped">
 		            <thead>
 		              <tr>

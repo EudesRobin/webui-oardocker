@@ -1,6 +1,6 @@
 <?php
-session_start();
-function json_request($url){
+
+function json_request_simple_url($url){
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -12,9 +12,21 @@ curl_close($ch);
 return json_decode($result,true);
 }
 
-function json_post($resource,$name,$properties,$command,$type,$reservation,$directory){
+function json_request_post($resource,$name,$properties,$command,$type,$reservation,$directory){
 
 $data = array();
+session_start();
+// you mist be logged to do this request ..
+if(!isset($_SESSION['login'])){
+	header('location:/webui-oardocker/auth/redirect_login.php');
+	exit();
+}
+
+// as docker user, only ;)
+if(strcmp($_SESSION['login'],"docker")!=0){
+	header('location:/webui-oardocker/auth/redirect_login.php');
+	exit();
+}
 
 if(!empty($resource) && !empty($command) ){
 $data['resource'] = $resource;
