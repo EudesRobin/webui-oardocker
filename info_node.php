@@ -52,14 +52,15 @@ echo '
 		</div><!--end col-md-6 -->
 	</div><!--row -->
 	<div class="page-header">
-		<h1>Current state</h1>
+		<h1>General Availability</h1>
 	</div>
 	<div class="progress">
 		<div class="progress-bar progress-bar-success" style="width: '.($alive/$json_array['total']*100).'%"><span class="sr-only">Complete (success)</span></div>
 	        <div class="progress-bar progress-bar-warning" style="width: '.($absent/$json_array['total']*100).'%"><span class="sr-only">Complete (warning)</span></div>
 	        <div class="progress-bar progress-bar-danger" style="width: '.($dead/$json_array['total']*100).'%"><span class="sr-only">Complete (danger)</span></div>
 	</div>
-</div>';
+</div><!-- end container theme-showcase -->
+';
 
 include 'footer.php';
 ?>

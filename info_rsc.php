@@ -12,21 +12,23 @@
 	
 echo '
 <div class="container theme-showcase" role ="main">
-  <div class="jumbotron">
-    <h1>Details</h1>
-  </div><!--end jumbotron -->
-  <div class="page-header">
-    <h1>Property of resources associated to the node</h1>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-    <!--begining table -->
-      <table class="table table-striped">
-        <thead>';
+	<div class="jumbotron">
+		<h1>Details</h1>
+	</div><!--end jumbotron -->
+	<div class="page-header">
+	<h1>Properties of resources on host : '.$_GET['network_id'].'</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+		<!--begining table -->
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th></th>
+					';
 
 	// First, we get for each resource identified by id some specifics informations
 	$array_rsc = array();
-	echo'  <th></th>';
 
 	for($i=0;$i<$json_grp['total'];$i++){
 		$details = 'http://localhost/oarapi/resources/'.$json_grp['items'][$i]['id'].'.json';
@@ -34,75 +36,87 @@ echo '
 	}
 
 	for($i=0;$i<$json_grp['total'];$i++){
-		echo '
-      <th><a href="job.php?id='.$array_rsc[$i]['id'].'&cpu='.$array_rsc[$i]['cpu'].'" role="button" class="btn btn-lg btn-primary">Submit a job</a></th>';
+		echo '<th><a href="job.php?id='.$array_rsc[$i]['id'].'&cpu='.$array_rsc[$i]['cpu'].'" role="button" class="btn btn-lg btn-primary">Submit a job</a></th>
+					';
 	}
 
-	echo '</tr>
-      </thead>
-    <tbody>';
+	echo '
+				</tr>
+			</thead>
+			<tbody>
+	';
    // And now, we can display, in line, for each rsc the value of the propriety...
-   echo '<tr><th>scheduler_priority</th>';
+   echo '			<tr><th>scheduler_priority</th>';
    for($i=0;$i<$json_grp['total'];$i++){
    	echo '<td>'.$array_rsc[$i]['scheduler_priority'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>finaud_decision</th>';
+   echo '				<tr><th>finaud_decision</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['finaud_decision'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>core</th>';
+   echo '				<tr><th>core</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['core'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>deploy</th>';
+   echo '				<tr><th>deploy</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['deploy'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>besteffort</th>';
+   echo '				<tr><th>besteffort</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['besteffort'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>cpuset</th>';
+   echo '				<tr><th>cpuset</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['cpuset'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>last_job_date</th>';
+   echo '				<tr><th>last_job_date</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['last_job_date'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>desktop_computing</th>';
+   echo '				<tr><th>desktop_computing</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['desktop_computing'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>drain</th>';
+   echo '				<tr><th>drain</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['drain'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>state</th>';
+   echo '				<tr><th>state</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['state'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>available_upto</th>';
+   echo '				<tr><th>available_upto</th>';
    for($i=0;$i<$json_grp['total'];$i++){
 	switch($array_rsc[$i]['available_upto']){
 		case 0:
@@ -119,90 +133,107 @@ echo '
 			break;
 	}
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>id</th>';
+   echo '				<tr><th>id</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['id'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>cpu</th>';
+   echo '				<tr><th>cpu</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['cpu'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>api_timestamp</th>';
+   echo '				<tr><th>api_timestamp</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.date('d/m/y',$array_rsc[$i]['api_timestamp']).'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>expiry_date</th>';
+   echo '				<tr><th>expiry_date</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['expiry_date'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>host</th>';
+   echo '				<tr><th>host</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['host'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>network_address</th>';
+   echo '				<tr><th>network_address</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['network_address'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>suspended_jobs</th>';
+   echo '				<tr><th>suspended_jobs</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['suspended_jobs'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>next_finaud_decision</th>';
+   echo '				<tr><th>next_finaud_decision</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['next_finaud_decision'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>last_available_upto</th>';
+   echo '				<tr><th>last_available_upto</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['last_available_upto'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>mem</th>';
+   echo '				<tr><th>mem</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['mem'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>state_num</th>';
+   echo '				<tr><th>state_num</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['state_num'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>type</th>';
+   echo '				<tr><th>type</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['type'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
-   echo '<tr><th>next_state</th>';
+   echo '				<tr><th>next_state</th>';
    for($i=0;$i<$json_grp['total'];$i++){
         echo '<td>'.$array_rsc[$i]['next_state'].'</td>';
    }
-   echo '</tr>';
+   echo '</tr>
+';
 
 	echo '
-		</tbody>
-	    </table>
-	</div></div></div>';
+			</tbody>
+		</table>
+		</div><!-- end col-md-6 -->
+	</div><!-- end row -->
+</div><!-- end container theme-showcase -->
+';
 	// end table
 include 'footer.php';
 ?>
