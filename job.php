@@ -1,8 +1,6 @@
 <?php
 include 'header.php';
 
-session_start();
-
 gen_header("Submit jobs");
 
 echo '<div class="container theme-showcase" role ="main">

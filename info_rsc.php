@@ -1,7 +1,6 @@
 <?php
 	include 'header.php';
-	include '/webui-oardocker/json_functions.php';
-	session_start(); 
+	include './action/json_functions.php';
 
 	// Title
 	$title = 'Details of '.$_GET['network_id'];
