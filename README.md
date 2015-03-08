@@ -37,7 +37,7 @@ oardocker install http://oar-ftp.imag.fr/oar/2.5/sources/testing/oar-2.5.4.tar.g
 Once the environment is installed, we can start a simulation.
 
 ```
-sudo oardocker start -n <nb> # start a simulation with <nb> nodes.
+oardocker start -n <nb> # start a simulation with <nb> nodes.
 
 ```
 The webui is now available at : [http://localhost:48080/webui-oardocker/](http://localhost:48080/webui-oardocker/)
