@@ -43,11 +43,11 @@ echo '
 	}else if(strcmp($value['state'],"Absent")==0){
 		$absent++;
 		echo '<td><button type="button" class="btn btn-lg btn-warning">'.$value['state'].'</button></td>
-				<td><a href="info_rsc.php?network_id='.$value['network_address'].'" role="button" class="btn btn-lg btn-warning">Details & submit job</a></td></tr>';
+				<td><a href="info_rsc.php?network_id='.$value['network_address'].'"><button type="button" class="btn btn-lg btn-warning">Details & submit job</button></a></td></tr>';
 	}else{
 		$dead++;
 		echo '<td><button type="button" class="btn btn-lg btn-danger">'.$value['state'].'</button></td>
-				<td><a href="info_rsc.php?network_id='.$value['network_address'].'" role="button" class="btn btn-lg btn-danger">Details & submit job</a></td></tr>';
+				<td><a href="info_rsc.php?network_id='.$value['network_address'].'"><button type="button" class="btn btn-lg btn-danger">Details & submit job</button></a></td></tr>';
 	}
 }
 echo '
