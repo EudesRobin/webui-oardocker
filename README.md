@@ -26,6 +26,7 @@ rm custom_setup.sh #delete original & empty script
 wget https://raw.githubusercontent.com/EudesRobin/webui-oardocker/master/custom_setup/frontend/custom_setup.sh
 
 # oar-docker build
+cd ~/oardocker/.oardocker/
 oardocker build
 
 # now, we install oar
@@ -44,5 +45,4 @@ The webui is now available at : [http://localhost:48080/webui-oardocker/](http:/
 __Security__
 
 Like oar-docker, this webui for oar-docker is in no way secure.It's a project for development and testing.
-User : docker  / password : docker (  submitting jobs...) in order to generate nodes, the user is oar ( password : docker ) [http://localhost:48080/webui-oardocker/](http://localhost:48080/webui-oardocker/)
-is bind to localhost (by apache ), and should not be used by external stations.
+User : docker  / password : docker (  submitting jobs...) in order to generate nodes, the user is oar ( password : docker )
