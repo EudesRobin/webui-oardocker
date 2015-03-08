@@ -2,7 +2,7 @@
 include 'header.php';
 
 gen_header("Submit jobs");
-
+$_SESSION['job.php']['GET_BACKUP'] = $_GET;
 echo '<div class="container theme-showcase" role ="main">
 			<div class="jumbotron">
 			<h1>Submit jobs</h1>

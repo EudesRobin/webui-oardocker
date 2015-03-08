@@ -43,9 +43,9 @@ echo '
 				<li><a href="/monika/">Monika</a></li>
 				<li><a href="/drawgantt-svg/">Graphe Gant</a></li>';
 				if (isset($_SESSION['login'])) {
-					echo '<li><a href="/webui-oardocker/auth/deconnexion.php">Se déconnecter ('.($_SESSION['login']).')</a></li>';
+					echo '<li><a href="/webui-oardocker/auth/logout.php">Logout ('.($_SESSION['login']).')</a></li>';
 				}else{
-					echo '<li><a href="/webui-oardocker/auth/authentification.php">Authentification</a></li>';
+					echo '<li><a href="/webui-oardocker/auth/login.php">Log in</a></li>';
 				}
 				echo '
 			</ul>

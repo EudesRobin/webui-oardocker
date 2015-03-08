@@ -37,13 +37,13 @@ echo '
 
 	if(strcmp($value['state'],"Alive")==0){
 		$alive++;
-			echo '<td><a href="info_rsc.php?network_id='.$value['network_address'].'" role="button" class="btn btn-lg btn-success">Details - submit a job</a></td></tr>';
+			echo '<td><a href="info_rsc.php?network_id='.$value['network_address'].'" role="button" class="btn btn-lg btn-success">'.$value['state'].' Details - submit a job</a></td></tr>';
 	}else if(strcmp($value['state'],"Absent")==0){
 		$absent++;
-		echo '<td><a href="info_rsc.php?network_id='.$value['network_address'].'" role="button" class="btn btn-lg btn-warning">Details - submit a job</a></td></tr>';
+		echo '<td><a href="info_rsc.php?network_id='.$value['network_address'].'" role="button" class="btn btn-lg btn-warning">'.$value['state'].' Details - submit a job</a></td></tr>';
 	}else{
 		$dead++;
-		echo '<td><a href="info_rsc.php?network_id='.$value['network_address'].'" role="button" class="btn btn-lg btn-danger">Details - submit a job</a></td></tr>';
+		echo '<td><a href="info_rsc.php?network_id='.$value['network_address'].'" role="button" class="btn btn-lg btn-danger">'.$value['state'].' Details - submit a job</a></td></tr>';
 	}
 }
 echo '

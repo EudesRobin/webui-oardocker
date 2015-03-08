@@ -2,14 +2,14 @@
 	// def functions for json
 	include('json_functions.php');
 	include('../header.php');
-	gen_geader('Command Output');
+	gen_header('Command Output');
 	
 	if(!isset($_SESSION['login'])){
-		header('location:/webui-oardocker/auth/redirect_login.php?pb=nolog');
+		header("location:/webui-oardocker/errors.php?pb=nolog");
 		exit();
 	}
-	if(strcmp($_SESSION['login'],"docker"!=0)){
-		header('location:/webui-oardocker/auth/redirect_login.php?pb=wronguser');
+	if(strcmp($_SESSION['login'],"docker")!=0){
+		header("location:/webui-oardocker/errors.php?pb=wronguser");
 		exit();
 	}
 	if(!empty($_POST['command'])&&!empty($_POST['resource'])){
@@ -19,7 +19,7 @@
 	var_dump($r);
 	}else{
 	// minimals parameters for the json request
-		header("location:{$SERVER['HTTP_REFERER']}");
+		header("location:/webui-oardocker/errors.php?pb=rsc_cmd");
 		exit();
 	}
 
