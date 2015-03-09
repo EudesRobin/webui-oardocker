@@ -7,9 +7,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" language="javascript" src="/webui-oar/docker/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" language="javascript" src="/webui-oar/docker/bootstrap-3.3.2-dist/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" language="javascript" src="/webui-oar/docker/bootstrap-3.3.2-dist/js/dataTables.bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="/webui-oar/docker/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
