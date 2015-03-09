@@ -80,11 +80,11 @@ echo '
 
 		</div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	// For demo to fit into DataTables site builder...
 	$('#example')
 		.removeClass( 'display' )
 		.addClass('table table-striped table-bordered');
-</script>
+</script> -->
 	</body>
 </html>
