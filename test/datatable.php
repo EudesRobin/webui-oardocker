@@ -87,4 +87,4 @@ echo '
 		.addClass('table table-striped table-bordered');
 </script> -->
 	</body>
-</html>
+<?php include '../footer.php'; ?>
