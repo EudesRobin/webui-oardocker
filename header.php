@@ -16,6 +16,17 @@ echo '<!DOCTYPE html>
 	<link href="/webui-oardocker/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Bootstrap theme -->
 	<link href="/webui-oardocker/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+			<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.css">
+
+		<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" language="javascript" src="//cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				$(\'#example\').dataTable();
+			} );
+		</script>
+
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>

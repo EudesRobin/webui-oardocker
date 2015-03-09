@@ -1,7 +1,7 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-	<head>
+<!--	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		
 		<title>DataTables test - info_node.php table</title>
@@ -17,10 +17,12 @@
 				$('#example').dataTable();
 			} );
 		</script>
-	</head>
+	</head>-->
 	<body>
 <?php
 include '../action/json_functions.php';
+include '../header.php';
+gen_header('test');
 $url = 'http://localhost/oarapi/resources.json';
 $json_array  = json_request_simple_url($url);
 
