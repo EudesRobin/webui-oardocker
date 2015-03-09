@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		
-		<title>DataTables Bootstrap 3 example</title>
+		<title>DataTables test - info_node.php table</title>
 
 		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.css">
@@ -20,7 +20,9 @@
 	</head>
 	<body>
 <?php
-include './action/json_functions.php';
+include '../action/json_functions.php';
+$url = 'http://localhost/oarapi/resources.json';
+$json_array  = json_request_simple_url($url);
 
 echo '
 <div class="container theme-showcase" role ="main">
@@ -33,7 +35,7 @@ echo '
 	<div class="row">
 		<div class="col-md-6">
 		<!--begining table -->
-			<table class="table table-striped">
+			<table id="example" class="table table-striped">
 				<thead>
 					<tr>
 						<th>ID</th>
