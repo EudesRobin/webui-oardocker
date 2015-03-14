@@ -16,36 +16,21 @@ __Projet RICM4 - EUDES Robin & ROSSI Ombeline__
 
 Here, an example to install your oar-docker environment ( you must have install docker.io and oar-docker ):
 ```
-# Create a directory for your oar-docker environment
-mkdir ~/oardocker
-cd ~/oardocker
+# Download this script
+wget https://raw.githubusercontent.com/EudesRobin/webui-oardocker/master/custom_setup/start.sh
 
-# oar-docker init
-oardocker init
+#Make it executable
+chmod +x start.sh
 
-# Custom frontend install, to include our webui
-cd ~/oardocker/.oardocker/images/frontend
-rm custom_setup.sh #delete original & empty script
-wget https://raw.githubusercontent.com/EudesRobin/webui-oardocker/master/custom_setup/frontend/custom_setup.sh
-
-# oar-docker build
-cd ~/oardocker/.oardocker/
-oardocker build
-
-# now, we install oar
-oardocker install http://oar-ftp.imag.fr/oar/2.5/sources/testing/oar-2.5.4.tar.gz
-
+# use it ;) <n> is the number of node for your simulation
+./start.sh <n>
 ```
+This script install a oardocker environment in \$workdir ( a variable with the value  "\$HOME/oardocker", you can modify it..), then launch a simulation. If the environment is already setup in \$workdir, it just lauch the simulation.
 
-Once the environment is installed, we can start a simulation.
 
-```
-oardocker start -n <nb> # start a simulation with <nb> nodes.
-
-```
 The webui is now available at : [http://localhost:48080/webui-oardocker/](http://localhost:48080/webui-oardocker/)
 
 __Security__
 
 Like oar-docker, this webui for oar-docker is in no way secure.It's a project for development and testing.
-User : docker  / password : docker (  submitting jobs...) in order to generate nodes, the user is oar ( password : docker )
+
