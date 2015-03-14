@@ -25,7 +25,12 @@ echo '
         <strong>Missing parameter(s)</strong> A job submission mst target a resource and do something (execute a command)
       </div>';
       header("refresh:2;/webui-oardocker/job.php?id={$_SESSION['job.php']['GET_BACKUP']['id']}&cpu={$_SESSION['job.php']['GET_BACKUP']['cpu']}");
-  }
+  }else if(strcmp($_GET['pb'],"wronguser")==0){
+          echo '<div class="alert alert-danger" role="alert">
+        <strong>Wrong user</strong> for this action
+      </div>';
+      header("refresh:2;/webui-oardocker/auth/logout.php");
+    }
 
 }else{
 	echo '<div class="alert alert-danger" role="alert">
