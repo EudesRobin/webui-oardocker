@@ -5,10 +5,6 @@ set -e
 echo "Git & curl setup"
 apt-get -y install git-core php5-curl
 
-echo " Clone webui"
-cd /var/www
-git clone https://github.com/EudesRobin/webui-oardocker.git
-
 echo " custom apache config "
 
 echo " <Directory \"/var/www/webui-oardocker/custom_setup\">
