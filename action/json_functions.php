@@ -93,13 +93,12 @@ if(!empty($properties)){
 	$data['properties'] = array();
 
 	$tmp = explode(',',$properties);
-	$i=0;
+
 	foreach ($tmp as $key => $value) {
 		$tmp_s = explode('=',$value);
-		$data['properties'][i][$tmp_s[0]]=$tmp_s[1];
+		$data['properties'][$tmp_s[0]]=$tmp_s[1];
 	}
 
-	//$data['properties'] = $prop;
 }
 $data_string = json_encode($data);
 //return $data_string; 
