@@ -103,6 +103,7 @@ if(!empty($properties)){
 }
 $data_string = json_encode($data);
 //return $data_string; 
+// oarnodesetting -a -h test3 -p cpu=2 -p core=2
 
 
 $ch = curl_init('http://'.$_SESSION['login'].':'.$_SESSION['pwd'].'@localhost/oarapi-priv/resources.json');
