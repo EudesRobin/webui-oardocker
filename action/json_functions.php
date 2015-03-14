@@ -105,7 +105,7 @@ $data_string = json_encode($data);
 //return $data_string; 
 
 
-$ch = curl_init('http://'.$_SESSION['login'].':'.$_SESSION['pwd'].'@localhost/oarapi-priv/resources/generate.json');
+$ch = curl_init('http://'.$_SESSION['login'].':'.$_SESSION['pwd'].'@localhost/oarapi-priv/resources.json');
 
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);

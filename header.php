@@ -60,7 +60,8 @@ echo '
 			<ul class="nav navbar-nav">
 				<li><a href="/webui-oardocker/index.php">General view</a></li>
 				<li><a href="/monika/">Monika</a></li>
-				<li><a href="/drawgantt-svg/">Graphe Gant</a></li>';
+				<li><a href="/drawgantt-svg/">Graphe Gant</a></li>
+				<li><a href="/webui-oardocker/create.php">Create resources</a></li>';
 				if (isset($_SESSION['login'])) {
 					echo '<li><a href="/webui-oardocker/auth/logout.php">Logout ('.($_SESSION['login']).')</a></li>';
 				}else{
