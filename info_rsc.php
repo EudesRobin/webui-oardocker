@@ -34,11 +34,11 @@ echo '
 		$details = 'http://localhost/oarapi/resources/'.$json_grp['items'][$i]['id'].'.json';
 		$array_rsc[] = json_request_simple_url($details);
 	}
-
+/*
 	for($i=0;$i<$json_grp['total'];$i++){
 		echo '<th><a href="job.php?id='.$array_rsc[$i]['id'].'&cpu='.$array_rsc[$i]['cpu'].'" role="button" class="btn btn-lg btn-primary">Submit a job</a></th>
 					';
-	}
+	}*/
 
 	echo '
 				</tr>

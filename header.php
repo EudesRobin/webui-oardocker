@@ -12,28 +12,22 @@ echo '<!DOCTYPE html>
 	<meta name="author" content="Eudes Robin - Rossi Ombeline">
 	<link rel="icon" href="/webui-oardocker/favicon.ico">
 	<title>'.$title.'</title>
+
 	<!-- Bootstrap core CSS -->
-	<link href="/webui-oardocker/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/webui-oardocker/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Bootstrap theme -->
-	<link href="/webui-oardocker/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css" rel="stylesheet">
-			<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.css">
+	<link href="/webui-oardocker/bootstrap-3.3.2/css/bootstrap-theme.min.css" rel="stylesheet">
+	<!-- Datatable bootstrap integration -->
+	<link rel="stylesheet" type="text/css" href="/webui-oardocker/bootstrap-3.3.2/plugins/datatables-1.10/css/dataTables.bootstrap.css">
 
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="/webui-oar/docker/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
-
-		<!-- <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script> -->
-		<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" language="javascript" src="//cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {
-				$(\'#example\').dataTable();
-			} );
-		</script>
-
+	<!-- jquery ... -->
+	<script type="text/javascript" language="javascript" src="/webui-oardocker/bootstrap-3.3.2/js/jquery-2.1.3.min.js"></script>
+	<!-- Bootstrap js -->
+	<script src="/webui-oardocker/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+	<!-- jquery datatables plugins -->
+	<script type="text/javascript" language="javascript" src="/webui-oardocker/bootstrap-3.3.2/plugins/datatables-1.10/js/jquery.dataTables.min.js"></script>
+	<!-- datatable bootstrap js-->
+	<script type="text/javascript" language="javascript" src="/webui-oardocker/bootstrap-3.3.2/plugins/datatables-1.10/js/dataTables.bootstrap.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>

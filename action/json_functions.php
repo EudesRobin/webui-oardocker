@@ -90,7 +90,7 @@ $data['hostname'] = $hostname;
 
 if(!empty($properties)){
 	$prop = array();
-	$data['properties'] = array();
+	//$data['properties'] = array();
 
 	$tmp = explode(',',$properties);
 
@@ -98,6 +98,8 @@ if(!empty($properties)){
 		$tmp_s = explode('=',$value);
 		$data['properties'][$tmp_s[0]]=$tmp_s[1];
 	}
+	//$data["properties"]["cpu"]="5";
+	//$data["properties"]["core"]="10";
 
 }
 $data_string = json_encode($data);

@@ -3,7 +3,16 @@ include 'header.php';
 include './action/json_functions.php';
 
 gen_header("General view");
-$url = 'http://localhost/oarapi/resources.json';
+echo '
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				$(\'#tab\').dataTable({
+					"order": [[ 0, "asc" ]]
+				});
+			} );
+		</script>';
+
+$url = 'http://localhost/oarapi/resources/full.json';
 $json_array  = json_request_simple_url($url);
 
 echo '
@@ -17,24 +26,24 @@ echo '
 	<div class="row">
 		<div class="col-md-6">
 		<!--begining table -->
-			<table class="table table-striped">
+			<table id="tab" class="table table-striped">
 				<thead>
 					<tr>
-						<th>ID</th>
-						<th>NETWORK ADDRESS</th>
+						<th>Hostname</th>
+						<th>CPU ID</th>
+						<th>CORE ID</th>
 						<th>STATE</th>
 						<th>OTHERS</th>
 					</tr>
 				</thead>
 				<tbody>';
-
 $alive = 0;
 $absent = 0;
 $dead =0;
 
 foreach ($json_array['items'] as $key => $value) {
 echo '
-					<tr><td>'.$value['id'].'</td>'.'<td>'.$value['network_address'].'</td>';
+					<tr><td>'.$value['network_address'].'</td><td>'.$value['cpu'].'</td><td>'.$value['core'];
 
 	if(strcmp($value['state'],"Alive")==0){
 		$alive++;
