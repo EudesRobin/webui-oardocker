@@ -2,11 +2,11 @@
 	include 'header.php';
 	include './action/json_functions.php';
 
-	// Title
 	$title = 'Details of '.$_GET['network_id'];
 	gen_header($title);
 
-	// On recup toute les rsc associées au network_id
+  session_start();
+
 	$url = 'http://localhost/oarapi/resources/nodes/'.$_GET['network_id'].'.json';
 	$json_grp  = json_request_simple_url($url);
 	
@@ -235,5 +235,6 @@ echo '
 </div><!-- end container theme-showcase -->
 ';
 	// end table
-include 'footer.php';
+var_dump(json_encore($f))
+//include 'footer.php';
 ?>
