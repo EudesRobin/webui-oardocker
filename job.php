@@ -23,10 +23,15 @@ echo '<div class="container theme-showcase" role ="main">
 		                <th>Parameters</th>
 		              </tr>
 		            </thead>
-	            	<tbody>
+	            	<tbody>';
+			if(empty($_GET['core'])){
+				echo '<tr><td>Resources : </td><td><input type="text" name="resource" size="50" value=""/></td></tr>';
+			} else {
+				echo '<tr><td>Resources : </td><td><input type="text" name="resource" size="50" value="core='.$_GET['core'].',walltime=00:30:00"/></td></tr>';
+			}
 
-					 <tr><td>Resources : </td><td><input type="text" name="resource" size="50" value="core='.$_GET['core'].',walltime=00:30:00"/></td></tr>
-					 <tr><td>Name : </td><td><input type="text" name="name" size="50" value="test_job"/></td></tr>
+					 
+					echo ' <tr><td>Name : </td><td><input type="text" name="name" size="50" value="test_job"/></td></tr>
 					 <tr><td>Properties : </td><td><input type="text" name="properties" size="50" value ="" /></td></tr>
 					 <tr><td>Program to run : </td><td><input type="text" name="command" size="50" value="/bin/sleep 500"/></td></tr>
 					 <tr><td>Types : </td><td><input type="text" name="type" size="50" value=""/></td></tr>

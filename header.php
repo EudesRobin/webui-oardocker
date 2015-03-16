@@ -43,10 +43,7 @@ echo '
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
+			
 			</button>
 			<a class="navbar-brand" href="/webui-oardocker/index.php">WEBUI</a>
 		</div><!--end navbar-header -->
@@ -55,7 +52,8 @@ echo '
 				<li><a href="/webui-oardocker/index.php">General view</a></li>
 				<li><a href="/monika/">Monika</a></li>
 				<li><a href="/drawgantt-svg/">Graphe Gant</a></li>
-				<li><a href="/webui-oardocker/create.php">Create resources</a></li>';
+				<li><a href="/webui-oardocker/create.php">Create resources</a></li>
+				<li><a href="/webui-oardocker/job.php">Create job</a></li>';
 				if (isset($_SESSION['login'])) {
 					echo '<li><a href="/webui-oardocker/auth/logout.php">Logout ('.($_SESSION['login']).')</a></li>';
 				}else{
