@@ -20,7 +20,7 @@ echo '<div class="container theme-showcase" role ="main">
       			header("refresh:3;/webui-oardocker/auth/login.php");
   		}else if(strcmp($_GET['pb'],"rsc_cmd")==0){
   		  	echo '<div class="alert alert-danger" role="alert">
-  			      <strong>Missing parameter(s)</strong> A job submission mst target a resource and do something (execute a command)
+  			      <strong>Missing parameter(s).</strong> A job submission must target a resource and execute a command.
       			</div>';
       			header("refresh:3;/webui-oardocker/job.php?id={$_SESSION['job.php']['GET_BACKUP']['id']}&cpu={$_SESSION['job.php']['GET_BACKUP']['cpu']}");
   		}else if(strcmp($_GET['pb'],"wronguser")==0){
@@ -31,6 +31,11 @@ echo '<div class="container theme-showcase" role ="main">
     		}else if(strcmp($_GET['pb'],"ressource_inex")==0){
 			echo '<div class="alert alert-danger" role="alert">
       	  			The selected core <strong>does not exist.</strong>
+      			</div>';
+	 		header("refresh:3;/webui-oardocker/job.php");
+		} else if(strcmp($_GET['pb'],"wrong_param")==0){
+			echo '<div class="alert alert-danger" role="alert">
+      	  			You entered an invalid parameter.
       			</div>';
 	 		header("refresh:3;/webui-oardocker/job.php");
 		}else{
