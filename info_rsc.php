@@ -9,8 +9,13 @@
     $url = 'http://localhost/oarapi/resources/'.$_GET['core'].'.json';
     $json_grp  = json_request_simple_url($url);
     gen_header($title);
-
-
+?>
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+    $('#tab').DataTable();
+} );
+</script>
+<?php
 
 echo '
 <div class="container theme-showcase" role ="main">
@@ -23,6 +28,7 @@ echo '
 	<div class="row">
 		<div class="col-md-6">
 		<!--begining table -->
+    <a href="/webui-oardocker/job.php?core='.$_GET['core'].'"><button type="button" class="btn btn-lg btn-primary">Send a job to this core</button></a>
 		<table id="tab" class="table table-striped">
 			<thead>
 				<tr>
