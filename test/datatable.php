@@ -48,8 +48,6 @@ $(document).ready(function() {
 						x.push(data.type);
 						x.push(data.next_state);*/
 						x.push(data);
-
-					console.log(x);
 					return x;
 			}
 		},
