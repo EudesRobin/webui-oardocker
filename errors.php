@@ -30,6 +30,11 @@ echo '
         <strong>Wrong user</strong> for this action
       </div>';
       header("refresh:2;/webui-oardocker/auth/logout.php");
+  }else if(strcmp($_GET['pb'],"nocore")==0){
+          echo '<div class="alert alert-danger" role="alert">
+        <strong>No core selected</strong> so I can display nothing..
+      </div>';
+      header("refresh:4;/webui-oardocker/index.php");
     }
 
 }else{
