@@ -22,7 +22,15 @@
 
 	// For now, we just dump de json result
 	$r = json_submit_job($_POST['resource'],$_POST['name'],$_POST['properties'],$_POST['command'],$_POST['type'],$_POST['reservation'],$_POST['directory']);
-	var_dump($r);
+	if($r["code"]==400){
+		header("location:/webui-oardocker/errors.php?pb=ressource_inex");
+		exit();
+	} else if(isset($r["cmd_output"])){
+		header("location:/webui-oardocker/success.php?sc=job_cree");
+		exit();
+	}
+		
+	 else {var_dump($r);}
 	}else{
 	// minimals parameters for the json request
 		header("location:/webui-oardocker/errors.php?pb=rsc_cmd");
