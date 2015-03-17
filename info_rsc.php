@@ -12,7 +12,9 @@
 ?>
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function() {
-    $('#tab').DataTable();
+    $('#tab').DataTable({
+      "iDisplayLength": 25
+    });
 } );
 </script>
 <?php
