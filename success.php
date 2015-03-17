@@ -13,6 +13,16 @@ echo '<div class="container theme-showcase" role ="main">
 				<strong>Job has been created</strong>
 			</div>';
 			header("refresh:3;/webui-oardocker/index.php");
+		}else if(strcmp($_GET['sc'],"login")==0){
+			echo '<div class="alert alert-success" role="alert">
+				<strong>Valid user/password</strong>You are logged :)
+			</div>';
+			header("refresh:3;/webui-oardocker/index.php");
+		}else if(strcmp($_GET['sc'],"logout")==0){
+			echo '<div class="alert alert-success" role="alert">
+				<strong>Sucess logout :)</strong>
+			</div>';
+			header("refresh:2;/webui-oardocker/index.php");
 		}
 }
 echo '</div>';

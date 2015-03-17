@@ -22,7 +22,7 @@ echo '<div class="alert alert-success" role="alert">
 echo '</div>
 </div>';
 
-header("Refresh: 1;/webui-oardocker/index.php");
+header("location:/webui-oardocker/success.php?sc=logout");
 exit();
 
 include '../footer.php';

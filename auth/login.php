@@ -16,7 +16,7 @@ echo '<div class="container theme-showcase" role="main">
 				session_start();
 				$_SESSION['login'] = $_POST['login'];
 				$_SESSION['pwd'] = $_POST['password'];
-				header('location:/webui-oardocker/index.php');
+				header('location:/webui-oardocker/success.php?sc=login');
 				exit();
 			}
 		} else {
