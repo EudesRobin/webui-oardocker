@@ -43,7 +43,12 @@ echo '<div class="container theme-showcase" role ="main">
       	  			You entered an invalid parameter.
       			</div>';
 	 		header("refresh:3;/webui-oardocker/job.php");
-		}else{
+		}else if(strcmp($_GET['pb'],"error_create")==0){
+      echo '<div class="alert alert-danger" role="alert">
+                You entered an invalid parameter, resource not created.
+            </div>';
+      header("refresh:3;/webui-oardocker/index.php");
+    }else{
 			echo '<div class="alert alert-danger" role="alert">
         			<strong>Unknow error</strong>Somehow, somewhere, something went terribly wrong :\'(
       			</div>';

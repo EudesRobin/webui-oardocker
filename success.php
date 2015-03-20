@@ -23,6 +23,11 @@ echo '<div class="container theme-showcase" role ="main">
 				<strong>Sucess logout :)</strong>
 			</div>';
 			header("refresh:2;/webui-oardocker/index.php");
+		}else if(strcmp($_GET['sc'],"ok_create")==0){
+			echo '<div class="alert alert-success" role="alert">
+				<strong>Resource successfully created :)</strong>
+			</div>';
+			header("refresh:2;/webui-oardocker/index.php");
 		}
 }
 echo '</div>';
