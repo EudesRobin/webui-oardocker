@@ -48,6 +48,16 @@ echo '<div class="container theme-showcase" role ="main">
                 You entered an invalid parameter, resource not created.
             </div>';
       header("refresh:3;/webui-oardocker/index.php");
+    }else if(strcmp($_GET['pb'],"no_host")==0){
+      echo '<div class="alert alert-danger" role="alert">
+                The host targeted was not found , resource creation aborted.
+            </div>';
+      header("refresh:3;/webui-oardocker/index.php");
+    }else if(strcmp($_GET['pb'],"not_unique")==0){
+      echo '<div class="alert alert-danger" role="alert">
+                Core ID already existant, resource creation aborted.
+            </div>';
+      header("refresh:3;/webui-oardocker/index.php");
     }else{
 			echo '<div class="alert alert-danger" role="alert">
         			<strong>Unknow error</strong>Somehow, somewhere, something went terribly wrong :\'(
