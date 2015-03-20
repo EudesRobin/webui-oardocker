@@ -2,7 +2,7 @@
 	
 	include 'json_functions.php';
 
-	function cmd_add_rsc($hostname,$cpu,$core,$mem,$properties){
+	function cmd_add_rsc($hostname,$cpu,$mem,$properties){
 	
 	// you mist be logged to do this request ..
 	if(!isset($_SESSION['login'])){
@@ -88,10 +88,10 @@ echo '<div class="container theme-showcase" role ="main">
 		header("location:/webui-oardocker/errors.php?pb=wronguser");
 		exit();
 	}
-	if(!empty($_POST['hostname'])||!empty($_POST['cpu'])||!empty($_POST['core'])||!empty($_POST['core'])){
+	if(!empty($_POST['hostname'])||!empty($_POST['cpu'])||!empty($_POST['core'])){
 
 	// For now, we just dump de json result
-	$r = cmd_add_rsc($_POST['hostname'],$_POST['cpu'],$_POST['core'],$_POST['mem'],$_POST['properties']);
+	$r = cmd_add_rsc($_POST['hostname'],$_POST['cpu'],$_POST['mem'],$_POST['properties']);
 	if(strpos($r,'ERROR')!== false){
 		header("location:/webui-oardocker/errors.php?pb=error_create");
 		exit();
@@ -99,6 +99,7 @@ echo '<div class="container theme-showcase" role ="main">
 		header("location:/webui-oardocker/success.php?sc=ok_create");
 		exit();
 	}
+
 	}else{
 	// minimals parameters for the json request
 		header("location:/webui-oardocker/errors.php?pb=rsc_cmd");
