@@ -3,6 +3,7 @@ include 'header.php';
 gen_header("Info Node");
 session_start(); ?>
 
+
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function() {
 	$('#tab').dataTable({
@@ -54,8 +55,7 @@ $(document).ready(function() {
 		{"data":"id","title": "","orderable":false,
 			"render": function ( data, type, full, meta ){
 				return '<a href="/webui-oardocker/delete_rsc.php?core='+data+'" onclick="window.open(this.href); return false;"><button type="button" class="btn btn-lg btn-danger">Delete this core</button></a>';
-// onclick="window.open(this.href, 'Confirmation', 'height=100, width=200, top=100, left=100, toolbar=no, menubar=no, location=no, resizable=yes, scrollbars=no, status=no'); return false;"
-			}
+	}
 		},
 		],
 		"order": [[ 0, "asc" ]],
