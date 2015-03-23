@@ -56,7 +56,7 @@ $(document).ready(function() {
 		<h1>General view of the nodes</h1>
 	</div><!--end jumbotron -->
 	<div class="page-header">
-		<h1>State of each cores </h1>
+		<h1>State of each core </h1>
 	</div>
 	<div class="row">
 		<div class="col-md-6">

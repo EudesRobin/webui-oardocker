@@ -31,6 +31,9 @@ echo '
 		<div class="col-md-6">
 		<!--begining table -->
     <a href="/webui-oardocker/job.php?core='.$_GET['core'].'"><button type="button" class="btn btn-lg btn-primary">Send a job to this core</button></a>
+		<br />
+		<br />
+		<br />
 		<table id="tab" class="table table-striped">
 			<thead>
 				<tr>
@@ -66,7 +69,7 @@ echo '
   }
   echo '<tr><td>id</td><td>'.$json_grp['id'].'</td></tr>';
   echo '<tr><td>cpu</td><td>'.$json_grp['cpu'].'</td></tr>';
-  echo '<tr><td>api_timestamp</td><td>'.$json_grp['api_timestamp'].'</td></tr>';
+  echo '<tr><td>api_timestamp</td><td>'.date('d/m/y',$json_grp['api_timestamp']).'</td></tr>';
   echo '<tr><td>expiry_date</td><td>'.$json_grp['expiry_date'].'</td></tr>';
   echo '<tr><td>host</td><td>'.$json_grp['host'].'</td></tr>';
   echo '<tr><td>network_address</td><td>'.$json_grp['network_address'].'</td></tr>';
