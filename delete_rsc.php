@@ -12,8 +12,7 @@ echo '<div class="container theme-showcase" role ="main">
 			</div>';
 
 
-	echo 'This cannot be undone! Do you really want to delete the core '.$_GET['core'].'?
-	';
+	echo 'This cannot be undone! Do you really want to delete the core ?';
 
 include 'footer.php';
 ?>
