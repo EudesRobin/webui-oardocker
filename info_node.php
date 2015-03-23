@@ -45,7 +45,12 @@ $(document).ready(function() {
 			"render": function ( data, type, full, meta ){
 				return '<a href="/webui-oardocker/job.php?core='+data+'"><button type="button" class="btn btn-lg btn-primary">Send a job to this core</button></a>';
 			}	
-		}
+		},
+		{"data":"core","title": "","orderable":false,
+			"render": function ( data, type, full, meta ){
+				return '<a href="/webui-oardocker/delete_res.php?core='+data+'"><button type="button" class="btn btn-lg btn-danger">Delete this core</button></a>';
+			}
+		},
 		],
 		"order": [[ 0, "asc" ]],
 	});
