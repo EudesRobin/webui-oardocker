@@ -58,6 +58,11 @@ echo '<div class="container theme-showcase" role ="main">
                 Core ID already existant, resource creation aborted.
             </div>';
       header("refresh:3;/webui-oardocker/index.php");
+    }else if(strcmp($_GET['pb'],"not_log")==0){
+      echo '<div class="alert alert-danger" role="alert">
+                You must be logged to do that.
+            </div>';
+      header("refresh:3;/webui-oardocker/index.php");
     }else{
 			echo '<div class="alert alert-danger" role="alert">
         			<strong>Unknow error</strong>Somehow, somewhere, something went terribly wrong :\'(

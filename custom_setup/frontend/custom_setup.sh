@@ -15,6 +15,3 @@ echo " <Directory \"/var/www/webui-oardocker/custom_setup\">
         deny from all
 </Directory>" >> /etc/apache2/apache2.conf
 
-# A very dirty way to add rsc to a node , bypassing the API /resources POST...
-# Then, this cmd is executed by php.
-echo "www-data ALL=(ALL) NOPASSWD:/usr/local/sbin/oarnodesetting" >> /etc/sudoers

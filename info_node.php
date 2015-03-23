@@ -26,6 +26,11 @@ $(document).ready(function() {
 				return '<button type="button" class="btn btn-lg btn-default">'+data+'</button>';
 		    }
 		},
+		{ "data" : "id","title": "RSC ID",
+		"render": function ( data, type, full, meta ) {
+				return '<button type="button" class="btn btn-lg btn-default">'+data+'</button>';
+		    }
+		},
 		{ "data" : "state", "title": "State",
 			"render": function ( data, type, full, meta ) {
 				if(data=='Alive'){
@@ -36,17 +41,17 @@ $(document).ready(function() {
 				return '<button type="button" class="btn btn-lg btn-danger">'+data+'</button>';
 		    }
 		},
-		{"data":"core","title": "Properties","orderable":false,
+		{"data":"id","title": "Properties","orderable":false,
 			"render": function ( data, type, full, meta ){
 				return '<a href="/webui-oardocker/info_rsc.php?core='+data+'"><button type="button" class="btn btn-lg btn-info">Details</button></a>';
 			}
 		},
-		{"data":"core", "title": "Action","orderable":false,
+		{"data":"id", "title": "Action","orderable":false,
 			"render": function ( data, type, full, meta ){
 				return '<a href="/webui-oardocker/job.php?core='+data+'"><button type="button" class="btn btn-lg btn-primary">Send a job to this core</button></a>';
 			}	
 		},
-		{"data":"core","title": "","orderable":false,
+		{"data":"id","title": "","orderable":false,
 			"render": function ( data, type, full, meta ){
 				return '<a href="/webui-oardocker/delete_rsc.php?core='+data+'" onclick="window.open(this.href); return false;"><button type="button" class="btn btn-lg btn-danger">Delete this core</button></a>';
 // onclick="window.open(this.href, 'Confirmation', 'height=100, width=200, top=100, left=100, toolbar=no, menubar=no, location=no, resizable=yes, scrollbars=no, status=no'); return false;"
