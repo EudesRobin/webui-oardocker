@@ -33,6 +33,19 @@
 		exit();
 	}
 
+	$cpu_def=0;
+	if(empty($_POST['cpu'])){
+		$checkcpu = json_request_simple_url("http://localhost/oarapi/resources/full.json");
+		foreach ($checkcpu['items'] as $key => $value) {
+			if($value['cpu']>$cpu_def){
+				$cpu_def=$value['cpu'];
+			}
+		}
+		$cpu_def=$cpu_def+1;
+		$prog = "sudo oarnodesetting -a -h {$hostname} -p cpu={$cpu_def} -p core=-1 -p mem={$mem} -p host={$hostname}";
+	}
+
+	/*
 	$uni = false;
 	foreach ($hosts['items'] as $key => $value) {
 		$uni = $uni || $value['id']==$core;
@@ -42,6 +55,7 @@
 		header('location:/webui-oardocker/errors.php?pb=not_unique');
 		exit();
 	}
+	*/
 
 	// others prop ( already defined by default )
 	if(!empty($properties)){
@@ -88,7 +102,7 @@ echo '<div class="container theme-showcase" role ="main">
 		header("location:/webui-oardocker/errors.php?pb=wronguser");
 		exit();
 	}
-	if(!empty($_POST['hostname'])||!empty($_POST['cpu'])||!empty($_POST['core'])){
+	if(!empty($_POST['hostname'])){
 
 	// For now, we just dump de json result
 	$r = cmd_add_rsc($_POST['hostname'],$_POST['cpu'],$_POST['mem'],$_POST['properties']);
