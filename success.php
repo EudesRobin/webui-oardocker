@@ -28,6 +28,11 @@ echo '<div class="container theme-showcase" role ="main">
 				<strong>Resource successfully created :)</strong>
 			</div>';
 			header("refresh:2;/webui-oardocker/index.php");
+		}else if(strcmp($_GET['sc'],"rsc_del")==0){
+			echo '<div class="alert alert-success" role="alert">
+				<strong>Resource successfully deleted</strong>
+			</div>';
+			header("refresh:2;/webui-oardocker/index.php");
 		}
 }
 echo '</div>';
