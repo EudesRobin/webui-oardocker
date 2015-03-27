@@ -179,12 +179,22 @@ function json_delete_rsc($resource){
 	}
 
 	// data field for json
+	
 	$data = array();
+	$datadead = array();
 
 	$data['id']=$resource;
+	$datadead['id']=$resource;
+	$datadead['state']='Dead';
 	$data_string = json_encode($data);
+	$datadead_string = json_encode($datadead);
 
 	$ch = curl_init('http://'.$_SESSION['login'].':'.$_SESSION['pwd'].'@localhost/oarapi-priv/resources.json');
+
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $datadead_string);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($datadead_string)));
 
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
