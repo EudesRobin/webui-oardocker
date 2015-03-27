@@ -61,7 +61,7 @@ $(document).ready(function() {
 		},
 		{"data":"id","title": "","orderable":false,
 			"render": function ( data, type, full, meta ){
-				return '<a href="/webui-oardocker/delete_rsc.php?core='+data+'" onclick="Supp(this.href); return false;"><button type="button" class="btn btn-lg btn-danger">Delete this core</button></a>';
+				return '<a href="/webui-oardocker/action/delete_rsc.php?core='+data+'" onclick="Supp(this.href); return false;"><button type="button" class="btn btn-lg btn-danger">Delete this core</button></a>';
 	}
 		},
 		],

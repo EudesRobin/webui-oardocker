@@ -1,7 +1,7 @@
 <?php
 	include 'header.php';
 
-gen_header("Error");
+gen_header("Success");
 
 echo '<div class="container theme-showcase" role ="main">
 	<div class="jumbotron">
