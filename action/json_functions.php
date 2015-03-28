@@ -208,5 +208,55 @@ function json_delete_rsc($resource){
 	return json_decode($result,true);
 }
 
+function json_get_jobs(){
+
+	$data = array();
+
+	$data_string = json_encode($data);
+
+	$ch = curl_init('http://'.$_SESSION['login'].':'.$_SESSION['pwd'].'@localhost/oarapi-priv/jobs/details.json');
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_string)));
+	$result = curl_exec($ch);
+	curl_close($ch);
+
+
+	return json_decode($result,true);
+}
+
+function json_stop_job($id){
+
+	// $_SESSION not found , but generate a notice
+	session_start();
+	// you must be logged to do this request ..
+	if(!isset($_SESSION['login'])){
+		header('location:/webui-oardocker/errors.php?pb=not_log');
+		exit();
+	}
+
+	// as docker user, only ;)
+	if(!check_usr_job($_SESSION['login'])){
+		header('location:/webui-oardocker/errors.php?pb=wronguser');
+		exit();
+	}
+
+	$data = array();
+	$data['id']=$id;
+
+	$data_string = json_encode($data);
+
+	$ch = curl_init('http://'.$_SESSION['login'].':'.$_SESSION['pwd'].'@localhost/oarapi-priv/jobs/'.$id.'.json');
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($data_string)));
+	$result = curl_exec($ch);
+	curl_close($ch);
+
+
+	return json_decode($result,true);
+}
 
 ?>
