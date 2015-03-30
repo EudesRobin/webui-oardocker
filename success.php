@@ -1,7 +1,7 @@
 <?php
 	include 'header.php';
 
-gen_header("Error");
+gen_header("Success");
 
 echo '<div class="container theme-showcase" role ="main">
 	<div class="jumbotron">
@@ -28,6 +28,16 @@ echo '<div class="container theme-showcase" role ="main">
 				<strong>Resource successfully created :)</strong>
 			</div>';
 			header("refresh:2;/webui-oardocker/index.php");
+		}else if(strcmp($_GET['sc'],"rsc_del")==0){
+			echo '<div class="alert alert-success" role="alert">
+				<strong>Resource successfully deleted</strong>
+			</div>';
+			header("refresh:2;/webui-oardocker/index.php");
+		}else if(strcmp($_GET['sc'],"job_del")==0){
+			echo '<div class="alert alert-success" role="alert">
+				<strong>Job successfully stopped</strong>
+			</div>';
+			header("refresh:2;/webui-oardocker/job_running.php");
 		}
 }
 echo '</div>';

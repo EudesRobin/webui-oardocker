@@ -3,18 +3,7 @@
 	include 'json_functions.php';
 
 	function cmd_add_rsc($hostname,$cpu,$mem,$properties){
-	
-	// you mist be logged to do this request ..
-	if(!isset($_SESSION['login'])){
-		header('location:/webui-oardocker/auth/redirect_login.php');
-		exit();
-	}
 
-	// as oar user, only ;)
-	if(strcmp($_SESSION['login'],"oar")!=0){
-		header('location:/webui-oardocker/auth/redirect_login.php');
-		exit();
-	}
 
 	// empty param already checked before we call this fct
 	// value of core id must be = id of rsc , will be set after. -1 -> impossible value.

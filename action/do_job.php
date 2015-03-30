@@ -9,15 +9,7 @@
 		<h1>Command output</h1>
 	</div><!--end jumbotron -->
 ';
-	
-	if(!isset($_SESSION['login'])){
-		header("location:/webui-oardocker/errors.php?pb=nolog");
-		exit();
-	}
-	if(strcmp($_SESSION['login'],"docker")!=0){
-		header("location:/webui-oardocker/errors.php?pb=wronguser");
-		exit();
-	}
+
 	if(!empty($_POST['command'])&&!empty($_POST['resource'])){
 
 	// For now, we just dump de json result
