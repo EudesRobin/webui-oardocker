@@ -29,6 +29,8 @@ echo '<!DOCTYPE html>
 	<!-- datatable bootstrap js-->
 	<script type="text/javascript" language="javascript" src="/webui-oardocker/bootstrap-3.3.2/plugins/datatables-1.10/js/dataTables.bootstrap.js"></script>
 
+	<script type="text/javascript" language="javascript" src="http://malsup.github.com/jquery.form.js"></script> 
+	
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
