@@ -1,11 +1,5 @@
 <?php
-//	include 'header.php';
 
-//gen_header("Error");
-
-/*echo '<div class="container theme-showcase" role ="main">
-	<div class="jumbotron">
-		<h1>Error</h1>*/
 	if(isset($_GET['pb'])){
 		if(strcmp($_GET['pb'],"nolog")==0){
 			echo '<div class="alert alert-danger" role="alert">
@@ -66,10 +60,7 @@
 			echo '<div class="alert alert-danger" role="alert">
         			<strong>Unknow error</strong> Somehow, somewhere, something went terribly wrong :\'(
       			</div>';
-      			//header("refresh:3;/webui-oardocker/index.php");
 		}		
 
 }
-//echo '</div>';
-//include 'footer.php';
 ?>

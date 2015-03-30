@@ -74,6 +74,7 @@ $(document).ready(function() {
 	<div class="page-header">
 		<h1>Currents Jobs</h1>
 	</div>
+	<div id="info" ></div>
 	<div class="row">
 		<div class="col-md-6">
 		<!--begining table -->
