@@ -1,8 +1,4 @@
-<?php
-session_start();
-function gen_header($title)
-{
-echo '<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
@@ -11,7 +7,7 @@ echo '<!DOCTYPE html>
 	<meta name="description" content="Oar-docker Webui">
 	<meta name="author" content="Eudes Robin - Rossi Ombeline">
 	<link rel="icon" href="/webui-oardocker/favicon.ico">
-	<title>'.$title.'</title>
+	
 
 	<!-- Bootstrap core CSS -->
 	<link href="/webui-oardocker/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -36,9 +32,36 @@ echo '<!DOCTYPE html>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-</head>
-<body>';
+<!-- Script - update info logout ... -->
+<script type="text/javascript" language="javascript">
 
+function update(){
+	var container = document.getElementById('info');
+ 	container.innerHTML = "<div class=\"alert alert-success\" role=\"alert\"><strong>You have been successfuly logout</strong></div>";
+ 	window.setTimeout("location=('/webui-oardocker/index.php');",2000);
+}
+
+function kill_session(){
+	if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+    xmlhttp.open("GET","/webui-oardocker/auth/logout.php",false);
+    xmlhttp.send();
+    update(); 
+}
+</script>
+
+<?php
+session_start();
+
+function gen_header($title){
+echo "<title>${title}</title></head><body>";
 echo '
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -58,7 +81,7 @@ echo '
 				<li><a href="/webui-oardocker/job.php">Create job</a></li>
 				<li><a href="/webui-oardocker/job_running.php">See current jobs</a></li>';
 				if (isset($_SESSION['login'])) {
-					echo '<li><a href="/webui-oardocker/auth/logout.php">Logout ('.($_SESSION['login']).')</a></li>';
+					echo '<li><a href="#" onclick="kill_session()">Logout  ('.($_SESSION['login']).')</a></li>';
 				}else{
 					echo '<li><a href="/webui-oardocker/auth/login.php">Log in</a></li>';
 				}

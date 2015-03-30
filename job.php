@@ -1,42 +1,75 @@
 <?php
 include 'header.php';
 gen_header("Submit jobs");
-
-echo '
-<script type="text/javascript" charset="utf-8">
-function validate(formData, jqForm, options) { 
-    // formData is an array of objects representing the name and value of each field 
-    // that will be sent to the server;  it takes the following form: 
-    // 
-    // [ 
-    //     { name:  username, value: valueOfUsernameInput }, 
-    //     { name:  password, value: valueOfPasswordInput } 
-    // ] 
-    // 
-    // To validate, we can examine the contents of this array to see if the 
-    // username and password fields have values.  If either value evaluates 
-    // to false then we return false from this method. 
- 
-    //for (var i=0; i < formData.length; i++) { 
-      //  if (!formData[i].value) { 
-        //    alert(\'Please enter a value for both Username and Password\'); 
-        //    return false; 
-        //} 
-    //} 
-    //alert(\'Alert?\'); 
-}
+;?>
+<script type="text/javascript" language="javascript">
+// prepare the form when the DOM is ready 
 $(document).ready(function() { 
-    // bind form using ajaxForm 
-    $(\'#myform\').ajaxForm( { beforeSubmit: validate } ); 
-});
-</script>';
+    var options = { 
+        target:        '#output',   // target element(s) to be updated with server response 
+        beforeSubmit:  showRequest,  // pre-submit callback 
+        success:       showResponse  // post-submit callback 
+ 
+        // other available options: 
+        //url:       url         // override for forms action  attribute 
+        //type:      type        // get or post, override for forms method attribute 
+        //dataType:  null        // xml, script, or json (expected server response type) 
+        //clearForm: true        // clear all form fields after successful submit 
+        //resetForm: true        // reset the form after successful submit 
+ 
+        // $.ajax options can be used here too, for example: 
+        //timeout:   3000 
+    }; 
+ 
+    // bind to the forms submit event 
+    $('#myform').submit(function() { 
+        // inside event callbacks this is the DOM element so we first 
+        // wrap it in a jQuery object and then invoke ajaxSubmit 
+        $(this).ajaxSubmit(options); 
+ 
+        // !!! Important !!! 
+        // always return false to prevent standard browser submit and page navigation 
+        return false; 
+    }); 
+}); 
+ 
+// pre-submit callback 
+function showRequest(formData, jqForm, options) { 
+ 	if(formData[0].value.length<=0 || formData[3].value.length<=0 ){
+ 		var container = document.getElementById('output');
+ 		container.innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"><strong>Missing parameter(s).</strong> A job submission must target a resource and execute a command.</div>";
+    	return false;
+	}else{
+    return true;
+	}
+} 
+ 
+// post-submit callback 
+function showResponse(responseText, statusText, xhr, $form)  { 
+    // for normal html responses, the first argument to the success callback 
+    // is the XMLHttpRequest objects responseText property 
+ 
+    // if the ajaxSubmit method was passed an Options Object with the dataType 
+    // property set to xml then the first argument to the success callback 
+    // is the XMLHttpRequest objects responseXML property 
+ 
+    // if the ajaxSubmit method was passed an Options Object with the dataType 
+    // property set to json then the first argument to the success callback 
+    // is the json data object returned by the server 
+ 
+    //alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
+     //   '\n\nThe output div should have already been updated with the responseText.'); 
+}
+</script>
 
+<?php
 
 $_SESSION['job.php']['GET_BACKUP'] = $_GET;
 echo '<div class="container theme-showcase" role ="main">
 			<div class="jumbotron">
 			<h1>Submit jobs</h1>
 			</div>
+			<div id="output" ></div>
 			<div class="page-header">
 			    <h1>Submit jobs</h1>
 			</div>';
@@ -44,6 +77,7 @@ echo '<div class="container theme-showcase" role ="main">
 
 	echo '
 	<div class="row">
+	
 	    <div class="col-md-6">
 			<form id="myform" action="/webui-oardocker/action/do_job.php" method="post">
 				<table class="table table-striped">

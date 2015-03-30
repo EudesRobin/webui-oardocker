@@ -1,7 +1,8 @@
 <?php
 include 'header.php';
 gen_header("Info Node");
-session_start(); ?>
+
+?>
 
  <script type="text/javascript">
    function Supp(link){
@@ -76,6 +77,7 @@ $(document).ready(function() {
 	<div class="page-header">
 		<h1>State of each core </h1>
 	</div>
+	<div id="info"></div>
 	<div class="row">
 		<div class="col-md-6">
 		<!--begining table -->

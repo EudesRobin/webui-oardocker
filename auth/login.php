@@ -2,25 +2,42 @@
 	include './htpasswd.php';
 	include '../header.php';
 	gen_header("Login");
+	 ?>
+<script type="text/javascript" language="javascript">
+function updatel(data){
+	var container = document.getElementById('info');
+	if(data=="ok"){
+ 	container.innerHTML = "<div class=\"alert alert-success\" role=\"alert\"><strong>You have been successfuly logged</strong></div>";
+ 	window.setTimeout("location=('/webui-oardocker/index.php');",2000);
+ 	}else{
+ 	container.innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"><strong>Invalid Login/password</strong></div>";
+ 	}
+}
+</script>
+
+<?php
+
 echo '<div class="container theme-showcase" role="main">
         <div class="jumbotron">
                 <h1>Login</h1>
         </div>
+        <div id="info"></div>
         <div class="page-header">';
+
 
 	if(!empty($_POST)){
 		if(!empty($_POST['login']) && !empty($_POST['password'])){
 			if(!test_passwd($_POST['login'],$_POST['password'])){
-				header("location:/webui-oardocker/errors.php?pb=wrongauth");
+				echo '<script type="text/javascript"> updatel("no");</script>';
 			} else {
 				session_start();
 				$_SESSION['login'] = $_POST['login'];
 				$_SESSION['pwd'] = $_POST['password'];
-				header('location:/webui-oardocker/success.php?sc=login');
+				echo '<script type="text/javascript"> updatel("ok");</script>';
 				exit();
 			}
 		} else {
-			header("location:/webui-oardocker/errors.php?pb=wrongauth");
+			echo '<script type="text/javascript"> updatel("no");</script>';
 		}
 	}
 ?>
@@ -35,6 +52,8 @@ echo '<div class="container theme-showcase" role="main">
 </table>
 </form>
 </div></div>
+
 <?php include '../footer.php'; ?>
+
 
 
