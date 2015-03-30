@@ -35,12 +35,6 @@
 <!-- Script - update info logout ... -->
 <script type="text/javascript" language="javascript">
 
-function update(){
-	var container = document.getElementById('info');
- 	container.innerHTML = "<div class=\"alert alert-success\" role=\"alert\"><strong>You have been successfuly logout</strong></div>";
- 	window.setTimeout("location=('/webui-oardocker/index.php');",2000);
-}
-
 function kill_session(){
 	if (window.XMLHttpRequest)
         {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -53,7 +47,7 @@ function kill_session(){
 
     xmlhttp.open("GET","/webui-oardocker/auth/logout.php",false);
     xmlhttp.send();
-    update(); 
+    document.location.href ='/webui-oardocker/index.php';
 }
 </script>
 

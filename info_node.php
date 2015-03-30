@@ -3,11 +3,28 @@ include 'header.php';
 gen_header("Info Node");
 
 ?>
+<script type="text/javascript">
+function update(data){
+	var container = document.getElementById('info');
+ 	container.innerHTML = data;
+ 	window.setTimeout("location=('info_node.php');",2000);
+}
 
- <script type="text/javascript">
    function Supp(link){
     if(confirm('Confirmer la suppression ?')){
-     document.location.href = link;
+     //document.location.href = link;
+         if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+    xmlhttp.open("GET",link,false);
+    xmlhttp.send();
+    update(xmlhttp.responseText);
     }
    }
   </script>
