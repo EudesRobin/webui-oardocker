@@ -34,7 +34,7 @@
 	<![endif]-->
 <!-- Script - update info logout ... -->
 <script type="text/javascript" language="javascript">
-
+// http://stackoverflow.com/questions/4274724/how-to-kill-session-from-javascript
 function kill_session(){
 	if (window.XMLHttpRequest)
         {// code for IE7+, Firefox, Chrome, Opera, Safari
