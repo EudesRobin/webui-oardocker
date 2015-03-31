@@ -19,7 +19,7 @@ function json_request_simple_url($url){
 	return json_decode($result,true);
 }
 
-function json_submit_job($resource,$name,$properties,$command,$reservation,$directory){
+function json_submit_job($resource,$name,$type,$command,$reservation,$directory){
 	
 	// $_SESSION not found , but generate a notice
 	session_start();
@@ -46,8 +46,8 @@ function json_submit_job($resource,$name,$properties,$command,$reservation,$dire
 		$data['name'] = $name;
 	}
 
-	if(!empty($properties)){
-		$data['property'] = $properties;
+	if(!empty($type)){
+		$data['type'] = $type;
 	}
 
 

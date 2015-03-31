@@ -69,15 +69,7 @@ echo '<div class="container theme-showcase" role ="main">
 			</div>
 			<div class="page-header">
 			    <h1>Add a resource</h1>
-			    <p>For now, you can only add a cpu/core to an existing host.
-			    cpu, mem are integers.
-			    
-			    others prop have this format : prop1=value,prop2=value ...</p>
 
-			    <p>If you target an unexistant host, the resource will be created,
-			    but the docker container associated with the new host will not be created,
-			    and the resource will be seen as "suspected" and will be "unusable".</p>
-				<p> You can also only target an existing host, and the cpu id will be automatically selected.</p>
 			</div>
 		<div id="output" ></div>';
 

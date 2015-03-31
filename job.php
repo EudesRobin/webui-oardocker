@@ -90,7 +90,7 @@ echo '<div class="container theme-showcase" role ="main">
 		            </thead>
 	            	<tbody>';
 			if(empty($_GET['core'])){
-				echo '<tr><td>Resources : </td><td><input type="text" name="resource" size="50" value=""/></td><td><img src="Help.png" title ="Exemple : core=1,walltime=00:30:00"></td></tr>
+				echo '<tr><td>Resources : </td><td><input type="text" name="resource" size="50" value=""/></td><td><img src="Help.png" title ="for example: core=1,walltime=00:30:00"></td></tr>
 				';
 			} else {
 				echo '<tr><td>Resources : </td><td><input type="text" name="resource" size="50" value="core='.$_GET['core'].',walltime=00:30:00"/></td></tr>';
@@ -98,11 +98,11 @@ echo '<div class="container theme-showcase" role ="main">
 
 					 
 					echo ' <tr><td>Name : </td><td><input type="text" name="name" size="50" value="nouveau_job"/></td><td></td></tr>
-					 <tr><td>Properties : </td><td><input type="text" name="properties" size="50" value ="" /></td><td><img src="Help.png" title ="par example : besteffort=YES, desktop_computing=NO"></td></tr>
+					 <tr><td>Type : </td><td><input type="text" name="properties" size="50" value ="" /></td><td><img src="Help.png" title ="for example: besteffort"></td></tr>
 					 <tr><td>Program to run : </td><td><input type="text" name="command" size="50" value="/bin/sleep 500"/></td><td></td></tr>
 					 
-					 <tr><td>Reservation dates : </td><td><input type="text" name="reservation" size="50" value=""/></td><td><img src="Help.png" title ="par exemple : core=2"></td></tr>
-					 <tr><td>Directory : </td><td><input type="text" name="directory" size="50" value=""/></td><td><img src="Help.png" title ="par exemple : core=2"></td></tr>
+					 <tr><td>Reservation dates : </td><td><input type="text" name="reservation" size="50" value=""/></td><td><img src="Help.png" title ="for example: 2007-03-25 17:32:12"></td></tr>
+					 <tr><td>Directory : </td><td><input type="text" name="directory" size="50" value=""/></td><td><img src="Help.png" title ="for example: /bin"></td></tr>
 					 <tr><td></td><td><input type="submit" value="OK"></td><td></td></tr>
 
 					</tbody>

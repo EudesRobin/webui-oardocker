@@ -1,6 +1,4 @@
 <?php
-
-
 		switch($_GET['pb']){
 			case "wronguser":
 				echo '<div class="alert alert-danger" role="alert">
