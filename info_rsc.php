@@ -2,10 +2,10 @@
 	include 'header.php';
 	include './action/json_functions.php';
 
-	if(!empty($_GET['core'])){
     		$title = 'Details of core'.$_GET['core'];
     		$url = 'http://localhost/oarapi/resources/'.$_GET['core'].'.json';
     		$json_grp  = json_request_simple_url($url);
+    		if($json_grp["code"]!=404){
     		gen_header($title);
 ?>
 <script type="text/javascript" charset="utf-8">
