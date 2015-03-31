@@ -34,6 +34,7 @@ echo '<div class="container theme-showcase" role="main">
 				$_SESSION['login'] = $_POST['login'];
 				$_SESSION['pwd'] = $_POST['password'];
 				echo '<script type="text/javascript"> updatel("ok");</script>';
+				include '../footer.php';
 				exit();
 			}
 		} else {

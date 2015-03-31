@@ -47,7 +47,7 @@ function kill_session(){
 
     xmlhttp.open("GET","/webui-oardocker/auth/logout.php",false);
     xmlhttp.send();
-    document.location.href ='/webui-oardocker/index.php';
+    document.location.href ='/webui-oardocker/auth/success_logout.php';
 }
 </script>
 
