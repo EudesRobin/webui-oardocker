@@ -67,6 +67,22 @@ $(document).ready(function() {
 				return '<button type="button" class="btn btn-lg btn-danger">'+data+'</button>';
 		    }
 		},
+		{"data":"id", "title": "","orderable":false,
+			"render": function ( data, type, full, meta ){
+				 if (window.XMLHttpRequest)
+        		{// code for IE7+, Firefox, Chrome, Opera, Safari
+        		xmlhttp=new XMLHttpRequest();
+   				 }
+    			else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+    		xmlhttp.open("GET",'/webui-oardocker/action/busy.php?core='+data,false);
+   			xmlhttp.send();
+    		return xmlhttp.responseText;
+			}	
+		},
 		{"data":"id","title": "Properties","orderable":false,
 			"render": function ( data, type, full, meta ){
 				return '<a href="/webui-oardocker/info_rsc.php?core='+data+'"><button type="button" class="btn btn-lg btn-info">Details</button></a>';
@@ -80,7 +96,8 @@ $(document).ready(function() {
 		{"data":"id","title": "","orderable":false,
 			"render": function ( data, type, full, meta ){
 				return '<a href="/webui-oardocker/action/delete_rsc.php?core='+data+'" onclick="Supp(this.href); return false;"><button type="button" class="btn btn-lg btn-danger">Delete this core</button></a>';
-	}
+		},
+
 		},
 		],
 		"order": [[ 0, "asc" ]],

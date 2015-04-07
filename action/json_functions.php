@@ -8,6 +8,18 @@ function check_usr_job($usr){
 	return (strcmp("docker",$usr)==0);
 }
 
+function check_job($core){
+
+	$result = json_request_simple_url('http://localhost/oarapi/resources/'.$core.'/jobs.json');
+
+	if(strcmp($result["total"],"0")==0){
+		return '<button type="button" class="btn btn-lg btn-success">Free</button>';
+	}else{
+		return '<button type="button" class="btn btn-lg btn-warning">Busy</button>';
+	}
+
+}
+
 function json_request_simple_url($url){
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
