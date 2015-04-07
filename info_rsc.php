@@ -28,7 +28,7 @@ echo '
 	<div class="row">
 		<div class="col-md-6">
 			<!--begining table -->
-			<a href="/webui-oardocker/job.php?core='.$_GET['core'].'"><button type="button" class="btn btn-lg btn-primary">Send a job to this core</button></a>
+			<a href="/webui-oardocker/job.php?core='.$_GET['core'].'"><button type="button" class="btn btn-lg btn-primary">Send a job</button></a>
 			<br />
 			<br />
 			<br />
