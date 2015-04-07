@@ -67,7 +67,7 @@ $(document).ready(function() {
 				return '<button type="button" class="btn btn-lg btn-danger">'+data+'</button>';
 		    }
 		},
-		{"data":"id", "title": "","orderable":false,
+		{"data":"id", "title": "",
 			"render": function ( data, type, full, meta ){
 				 if (window.XMLHttpRequest)
         		{// code for IE7+, Firefox, Chrome, Opera, Safari
