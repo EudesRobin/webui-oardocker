@@ -90,7 +90,7 @@ $(document).ready(function() {
 		},
 		{"data":"id", "title": "Action","orderable":false,
 			"render": function ( data, type, full, meta ){
-				return '<a href="/webui-oardocker/job.php?core='+data+'"><button type="button" class="btn btn-lg btn-primary">Send a job</button></a>';
+				return '<a href="/webui-oardocker/job.php"><button type="button" class="btn btn-lg btn-primary">Send a job</button></a>';
 			}	
 		},
 		{"data":"id","title": "","orderable":false,

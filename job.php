@@ -64,7 +64,6 @@ function showResponse(responseText, statusText, xhr, $form)  {
 
 <?php
 
-$_SESSION['job.php']['GET_BACKUP'] = $_GET;
 echo '<div class="container theme-showcase" role ="main">
 		<div class="jumbotron">
 			<h1>Submit jobs</h1>
@@ -89,12 +88,9 @@ echo '<div class="container theme-showcase" role ="main">
 		              </tr>
 		            </thead>
 	            	<tbody>';
-			if(empty($_GET['core'])){
-				echo '<tr><td>Resources : </td><td><input type="text" name="resource" size="50" value=""/></td><td><img src="Help.png" title ="for example: core=1,walltime=00:30:00"></td></tr>
-				';
-			} else {
-				echo '<tr><td>Resources : </td><td><input type="text" name="resource" size="50" value="core='.$_GET['core'].',walltime=00:30:00"/></td></tr>';
-			}
+
+				echo '<tr><td>Resources : </td><td><input type="text" name="resource" size="50" value="core=1,walltime=00:30:00"/></td></tr>';
+
 
 					 
 					echo ' <tr><td>Name : </td><td><input type="text" name="name" size="50" value="nouveau_job"/></td><td></td></tr>
